@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Sbh.Fr.Model.Custom.ListUserGroup>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="portlet light portlet-fit portlet-datatable bordered">
+        <div class="portlet-title">
+            <div class="note note-info">
+                <h5 style="margin-bottom: 0px;">
+                    <i class="icon-pencil"></i>
+                    Please Select List.
+                </h5>
+            </div>
+        </div>
+        <div class="portlet-body">
+            <div class="table-container" style="">
+
+                <div id="datatable_ajax_wrapper" class="dataTables_wrapper dataTables_extended_wrapper no-footer">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12"><div class="dataTables_paginate paging_bootstrap_extended" id="datatable_ajax_paginate"><div class="pagination-panel"> Page <a href="#" class="btn btn-sm default prev disabled"><i class="fa fa-angle-left"></i></a><input class="pagination-panel-input form-control input-sm input-inline input-mini" maxlenght="5" style="text-align:center; margin: 0 5px;" type="text"><a href="#" class="btn btn-sm default next"><i class="fa fa-angle-right"></i></a> of <span class="pagination-panel-total">18</span></div></div><div class="dataTables_length" id="datatable_ajax_length"><label><span class="seperator">|</span>View <select name="datatable_ajax_length" aria-controls="datatable_ajax" class="form-control input-xs input-sm input-inline"><option value="10">10</option><option value="20">20</option><option value="50">50</option><option value="100">100</option><option value="150">150</option><option value="-1">All</option></select> records</label></div><div class="dataTables_info" id="datatable_ajax_info" role="status" aria-live="polite"><span class="seperator">|</span>Found total 178 records</div></div><div class="col-md-4 col-sm-12">
+                            <div class="table-group-actions pull-right">
+                                <span></span>
+                                <select class="table-group-action-input form-control input-inline input-small input-sm">
+                                    <option value="">Select...</option>
+                                    <option value="Cancel">Cancel</option>
+                                    <option value="Cancel">Hold</option>
+                                    <option value="Cancel">On Hold</option>
+                                    <option value="Close">Close</option>
+                                </select>
+                                <button class="btn btn-sm green table-group-action-submit">
+                                    <i class="fa fa-search"></i> Search
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover table-checkable dataTable no-footer" id="datatable_ajax" aria-describedby="datatable_ajax_info" role="grid">
+                            <thead>
+                                <tr role="row" class="heading">
+                                    <th hidden="hidden">Id</th>
+                                    <th hidden="hidden">Id Group</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Born</th>
+                                    <th>Position </th>
+                                    <th hidden="hidden">Gender Id</th>
+                                    <th>Gender Desc</th>
+                                    <th>Address</th>
+                                    <th>Description</th>
+                                    <th>Job</th>
+                                    <th>Company</th>
+                                    <th>Hobby</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr role="row" class="odd">
+                                        <td hidden="hidden">
+                                            @Html.DisplayFor(modelItem => item.ID)
+                                        </td>
+                                        <td hidden="hidden">
+                                            @Html.DisplayFor(modelItem => item.ID_GROUP)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.USER_NAME)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.USER_MAIL)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.BORN)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.GROUP_DESC)
+                                        </td>
+                                        <td hidden="hidden">
+                                            @Html.DisplayFor(modelItem => item.GENDER)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.GENDER_DESC)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ADDRESS)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.DESCRIPTION)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.JOB)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.COMPANY)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.HOBBY)
+                                        </td>
+                                        <td>
+                                            <a href="@Url.Action("Profile", "User", new { id=item.ID, tag="p", lid=ViewBag.lid})"
+                                               class="btn btn-xs btn-default btn-circle-right font-green">
+                                                <i class="icon-user font-green"></i>
+                                                <span>Profile</span>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

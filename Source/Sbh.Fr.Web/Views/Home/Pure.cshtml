@@ -1,0 +1,40 @@
+﻿@using Sbh.Fr.Model;
+<style>
+    .bejo img {
+        width: 100%;
+        height: auto;
+    }
+</style>
+
+<div class="portlet box blue-hoki">
+    <div class="portlet-body-morris-fit">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                @{
+                    int i = 0;
+                    foreach (SBH_TM_SLIDESHOW item in ViewBag.GetSlideshow)
+                    {
+                        <li data-target="#myCarousel" data-slide-to="@i" class="@item.CLASS"></li>
+                        i += 1;
+                    }
+                }
+            </ol>
+
+            <div class="carousel-inner">
+                @{
+                    foreach (SBH_TM_SLIDESHOW item in ViewBag.GetSlideshow)
+                    {
+                        item.CONTENT_DESCRIPTION = HttpUtility.HtmlDecode(item.CONTENT_DESCRIPTION);
+
+                        <div class="item @item.CLASS">
+                            <a href="@item.URL" class="bejo" style="text-decoration:none">
+                                @Html.Raw(item.CONTENT_DESCRIPTION)
+                            </a>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+    </div>
+</div>

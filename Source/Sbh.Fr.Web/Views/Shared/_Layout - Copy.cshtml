@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Build Persada Solution</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    @Styles.Render("~/Metronic/css")
+    @Scripts.Render("~/bundles/jquery")
+    <link href="~/Content/Metronics/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" />
+
+    @*@Styles.Render("~/Gemagrafi/css")*@
+    @Styles.Render("~/Persada/css")
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link href="~/Content/DatePicker/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/Metronics/global/plugins/pages/css/blog.css" rel="stylesheet" />
+    <style type="text/css">
+        .panel-white {
+            border: 1px solid #f8f8f8;
+            margin-bottom: 1%;
+        }
+
+            .panel-white .panel-heading {
+                color: #333;
+                background-color: #fff;
+                border-color: #ddd;
+            }
+
+            .panel-white .panel-footer {
+                background-color: #fff;
+                border-color: #ddd;
+            }
+
+        .post .post-heading {
+            height: 70px;
+            padding: 5px 15px;
+        }
+
+            .post .post-heading .avatar {
+                width: 60px;
+                height: 60px;
+                display: block;
+                margin-right: 15px;
+            }
+
+            .post .post-heading .meta .title {
+                margin-bottom: 0;
+            }
+
+                .post .post-heading .meta .title a {
+                    color: black;
+                }
+
+                    .post .post-heading .meta .title a:hover {
+                        color: #aaaaaa;
+                    }
+
+            .post .post-heading .meta .time {
+                margin-top: 8px;
+                color: #999;
+            }
+
+        .post .post-image .image {
+            width: 100%;
+            height: auto;
+        }
+
+        .post .post-description {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+            .post .post-description p {
+                font-size: 14px;
+            }
+
+            .post .post-description .stats {
+                margin-top: 20px;
+                margin-bottom: 1%;
+            }
+
+                .post .post-description .stats .stat-item {
+                    display: inline-block;
+                    margin-right: 15px;
+                }
+
+                    .post .post-description .stats .stat-item .icon {
+                        margin-right: 8px;
+                    }
+
+        .post .post-footer {
+            border-top: 1px solid #ddd;
+            padding: 15px;
+        }
+
+            .post .post-footer .input-group-addon a {
+                color: #454545;
+            }
+
+            .post .post-footer .comments-list {
+                padding: 0;
+                margin-top: 20px;
+                list-style-type: none;
+            }
+
+                .post .post-footer .comments-list .comment {
+                    display: block;
+                    width: 100%;
+                    margin: 20px 0;
+                }
+
+                    .post .post-footer .comments-list .comment .avatar {
+                        width: 35px;
+                        height: 35px;
+                    }
+
+                    .post .post-footer .comments-list .comment .comment-heading {
+                        display: block;
+                        width: 100%;
+                    }
+
+                        .post .post-footer .comments-list .comment .comment-heading .user {
+                            font-size: 14px;
+                            font-weight: bold;
+                            display: inline;
+                            margin-top: 0;
+                            margin-right: 10px;
+                        }
+
+                        .post .post-footer .comments-list .comment .comment-heading .time {
+                            font-size: 12px;
+                            color: #aaa;
+                            margin-top: 0;
+                            display: inline;
+                        }
+
+                    .post .post-footer .comments-list .comment .comment-body {
+                        margin-left: 50px;
+                    }
+
+                    .post .post-footer .comments-list .comment > .comments-list {
+                        margin-left: 50px;
+                    }
+
+        .btn-close-custom {
+            font-size: smaller;
+            /*margin-left: 2%;*/
+            margin-bottom: 1%;
+        }
+
+        .portlet-title {
+            border: none;
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
+    <div class="page-wrapper">
+        @Html.Partial("_Header")
+        <div class="clearfix"> </div>
+        <div class="page-container">
+            @Html.Partial("_Sidebar")
+            @*@Html.Partial("_QuickSidebar")*@
+            <div class="page-content-wrapper">
+                <div class="page-content" style="min-height: 1112px;">
+                    @Html.Partial("_Modal")
+                    <div class="page-bar">
+                        @*<ul class="page-breadcrumb">
+                                <li>
+                                    <i class="fa fa-home"></i>
+                                    <a href="index.html">Home > </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">@ViewBag.BreadcrumbMenu</a>
+                                </li>
+                                <li>
+                                    <a href="#">@ViewBag.BreadcrumbSubMenu</a>
+                                </li>
+                            </ul>*@
+                        @*<div class="input-group date" id="dateTimePicker">
+                                <input type="text" class="form-control">
+                                <div class="input-group-addon">
+                                    <span class="glyphicon glyphicon-th"></span>
+                                </div>
+                            </div>*@
+                        @*<div class="page-toolbar">
+                            <div id="dashboard-report-range" class="pull-right tooltips btn btn-sm" data-container="body" data-placement="bottom" data-original-title="Change dashboard date range">
+                                <i class="icon-calendar"></i>&nbsp;*@
+                        @*<span class="thin uppercase hidden-xs">February 12, 2018 - March 13, 2018</span>&nbsp;*@
+                        @*<i class="fa fa-angle-down"></i>
+                                </div>
+                            </div>*@
+                        @*<div class="form-group">
+                                    <div class="col-md-3">
+                                        <div class="input-group input-medium date date-picker" id="date1" data-date-format="dd-mm-yyyy" data-date-start-date="+0d">
+                                            <input type="text" class="form-control" readonly="">
+                                            <span class="input-group-btn">
+                                                <button class="btn default" type="button">
+                                                    <i class="fa fa-calendar"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>*@
+                        @*<h1 class="page-title">
+                                Admin Dashboard
+                                <small>statistics, charts, recent events and reports</small> menu-toggler responsive-toggler
+                                                                                             menu-toggler sidebar-toggler
+                            </h1>*@
+                        <div class="row" style="background:white">
+                            <div class="col-md-12">
+                                <div class="col-md-8">
+                                    @RenderBody()
+                                </div>
+                                <div class="col-md-4" style="border:1px solid #e1e1e1">
+                                    <div class="blog-single-sidebar bordered blog-container">
+                                        <div class="blog-single-sidebar-recent">
+                                            <h5 class="blog-sidebar-title uppercase">Recent Posts</h5>
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:;">Recent Posts 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Recent Posts 2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Recent Posts 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Recent Posts 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="blog-single-sidebar-tags">
+                                            <h5 class="blog-sidebar-title uppercase">Tags</h5>
+                                            <ul class="blog-post-tags">
+                                                <li>
+                                                    <a href="javascript:;">Tags 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Tags 2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Tags 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Tags 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="blog-single-sidebar-links">
+                                            <h5 class="blog-sidebar-title uppercase">Useful Links</h5>
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:;">Links 1</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Links 2</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Links 3</a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">Links 4</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="blog-single-sidebar-ui">
+                                            <h5 class="blog-sidebar-title uppercase">User</h5>
+                                            <div class="panel post">
+                                                <div class="post-heading">
+                                                    <div class="pull-left image">
+                                                        <a href="javascript:;">
+                                                            <img src="~/Content/img/37.jpg" class="img-circle avatar" alt="user profile image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="pull-left image">
+                                                        <a href="javascript:;">
+                                                            <img src="~/Content/img/42.jpg" class="img-circle avatar" alt="user profile image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="pull-left image">
+                                                        <a href="javascript:;">
+                                                            <img src="~/Content/img/01.jpg" class="img-circle avatar" alt="user profile image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="post-heading">
+                                                    <div class="pull-left image">
+                                                        <a href="javascript:;">
+                                                            <img src="~/Content/img/53.jpg" class="img-circle avatar" alt="user profile image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="pull-left image">
+                                                        <a href="javascript:;">
+                                                            <img src="~/Content/img/57.jpg" class="img-circle avatar" alt="user profile image">
+                                                        </a>
+                                                    </div>
+                                                    <div class="pull-left image">
+                                                        <a href="javascript:;">
+                                                            <img src="~/Content/img/59.jpg" class="img-circle avatar" alt="user profile image">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @Html.Partial("_Footer")
+
+            <div class="row">
+                <div class="modal fade" id="myModal" role="dialog">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/Metronic/js")
+</body>
+</html>
+
+@Scripts.Render("~/Persada/js")
+<script>
+    //$(function () {
+    //    $('#dateTimePicker').datepicker();
+    //    $('#date1').datetimepicker();
+    //})
+
+
+    jQuery(document).ready(function () {
+        Metronic.init(); // init metronic core componets
+        Layout.init(); // init layout
+        //QuickSidebar.init() // init quick sidebar
+        //Index.init();
+        Index.initDashboardDaterange();
+        //Index.initJQVMAP(); // init index page's custom scripts
+        //Index.initCalendar(); // init index page's custom scripts
+        //Index.initCharts(); // init index page's custom scripts
+        //Index.initChat();
+        //Index.initMiniCharts();
+        ////Index.initIntro();
+        //Tasks.initDashboardWidget();
+    });
+</script>
+

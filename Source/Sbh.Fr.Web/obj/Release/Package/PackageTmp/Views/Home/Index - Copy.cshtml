@@ -1,0 +1,113 @@
+﻿@model IEnumerable<Sbh.Fr.Model.Custom.QuestionAndAnswerCustoms>
+
+@{
+    var x = -1;
+    var y = -1;
+}
+
+<div class="col-md-12">
+    <div class="note note-info">
+        <h5 style="margin-bottom: 0px;">
+            <i class="fa fa-comments-o"></i>
+            Question and Answer Session
+            <br />
+            <a href="#" class="mt-sweetalert font-green mt-intalic" data-type="info" style="font-size: smaller;">
+                @DateTime.Now.ToString()
+            </a>
+        </h5>
+    </div>
+    @foreach (var item in Model)
+            {
+                if (item.IdQuestions != x)
+                {
+            <div class="panel panel-white post">
+                <div class="post-heading">
+                    <div class="pull-left image">
+                        <img src="~/Content/img/01.jpg" class="img-circle avatar" alt="user profile image">
+                    </div>
+                    <div class="pull-left meta">
+                        <div class="title h5">
+                            <span hidden="hidden">
+                                @Html.DisplayFor(modelItem => item.IdQuestions)
+                            </span>
+                            <a href="#"><b>@Html.DisplayFor(modelItem => item.QuestionsName)</b></a>
+                        </div>
+                        <h6 class="text-muted time">@Html.DisplayFor(modelItem => item.DateQustion)</h6>
+                    </div>
+
+                </div>
+                <div class="post-description" style="text-align:justify">
+                    @Html.DisplayFor(modelItem => item.Questions)
+                    
+                    <div class="stats">
+                        @if (item.IdQuestions != x)
+                        {
+                            <div class="col-md-12;" style="margin-left:2%" id="div_@item.IdQuestions.ToString()" hidden="hidden">
+
+                                <a href="#" class="btn btn-xs btn-danger btn-circle-right btn-close-custom" onclick="hideDiv(@item.IdQuestions.ToString())">
+                                    <span style="color:white">Close</span>
+                                    <i class="icon-close"></i>
+                                </a>
+
+                                @foreach (var sbItm in Model)
+                                {
+                                    if (sbItm.IdQuestionsAnswer == item.IdQuestions)
+                                    {
+                                        y = sbItm.IdQuestionsAnswer;
+                                        <div class="panel panel-white post">
+                                            <div class="post-heading">
+                                                <div class="pull-left image">
+                                                    <img src="~/Content/img/01.jpg" class="img-circle avatar" alt="user profile image">
+                                                </div>
+                                                <div class="pull-left meta">
+                                                    <div class="title h5">
+                                                        <a href="#"><b>@Html.DisplayFor(modelItem => sbItm.AnswerName)</b></a>
+                                                    </div>
+                                                    <h6 class="text-muted time">@Html.DisplayFor(modelItem => sbItm.DateAnswer)</h6>
+                                                </div>
+                                            </div>
+                                            <div class="post-description" style="text-align:justify">
+                                                @Html.DisplayFor(modelItem => sbItm.Answer)
+                                                <div class="stats">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                            if (y == item.IdQuestions)
+                            {
+                                <a href="#" class="btn btn-xs blue btn-circle-left" onclick="showDiv(@y.ToString())" style="font-size: smaller;">
+                                    <span style="color:white">Comments</span>
+                                    <i class="fa fa-comments"></i>
+                                </a>
+                            }
+                        }
+                        <a href="#" class="font-red" style="font-size:12px">
+                            <i class="icon-bubbles red"></i>&nbsp; 3,7k
+                        </a>
+                        <a href="@Url.Action("Reply", "Answer" , new { id=item.IdQuestions })" class="btn btn-xs blue btn-circle-right" style="font-size: smaller;">
+                            <i class="fa fa-mail-reply-all"></i>
+                            <span style="color:white">Reply</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+        x = item.IdQuestions;
+    }
+
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+
+    });
+    function showDiv(id) {
+        $("#div_" + id).show();
+    }
+    function hideDiv(id) {
+        $("#div_" + id).hide();
+    }
+</script>

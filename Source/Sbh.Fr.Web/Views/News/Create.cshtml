@@ -1,0 +1,89 @@
+﻿@model Sbh.Fr.Model.SBH_TM_NEWS
+@{
+    ViewBag.Title = "Create News";
+    ViewBag.ActiveMaintenance = "active";
+    ViewBag.ActiveNews = "active";
+    ViewBag.BreadCrumbMenu = "Maintenance";
+    ViewBag.BreadCrumbSubMenu = "News";
+    ViewBag.BreadCrumbSubSubMenu = "Create";
+}
+<h2>@ViewBag.Title.</h2>
+<link href="~/Content/dropzone/css/dropzone.css" rel="stylesheet" />
+<script>
+    var storeImage;
+</script>
+
+@using (Html.BeginForm("ActionCreate", "News", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="col-md-2 control-label">Category</label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.CATEGORY_ID, (IEnumerable<SelectListItem>)ViewBag.GetCategoryList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Title</label>
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.TITLE, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Description</label>
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.DESCRIPTION, new { @class = "form-control tinymce", @style = "width:300px" })
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Template</label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.TEMPLATE, (IEnumerable<SelectListItem>)ViewBag.GetTemplateList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Image1</label>
+        <div class="col-md-10">
+            <div>
+                <img id="txtImage" src="data:image/png;base64," class="img-medium" style="display:none" />
+                <input type="file" id="postedFile" name="postedFile" style="display:none" />
+            </div>
+            <div style="float:left">
+                <a href="#" id="btnBrowse" onclick="GetFile()" class="btn btn-sm btn-white btn-default btn-round">Browse</a>
+            </div>
+        </div>
+    </div>
+    @*<form action="/file-upload" class="dropzone" id="my-awesome-dropzone">
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+            </div>
+        </form>*@
+    <div class="form-group">
+        <label class="col-md-2 control-label">Signature</label>
+        <div class="col-md-10">
+            <div class="input-icon right">
+                <section action="#" class="dropzone" id="my-dropzone"></section>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Create" />
+        </div>
+    </div>
+
+}
+
+
+
+<script src="~/Content/dropzone/metronic.js"></script>
+<script src="~/Content/dropzone/dropzone.js"></script>
+<script src="~/Content/dropzone/form-dropzone.js"></script>
+
+<script>
+    jQuery(document).ready(function () {
+        FormDropzone.init();
+    });
+</script>

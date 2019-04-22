@@ -1,0 +1,1904 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C959DF7E-E0DF-4B64-83BE-A464AD8D0930}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sbh.Fr.Web</RootNamespace>
+    <AssemblyName>Sbh.Fr.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
+    <Compile Include="Controllers\CategoryQuestionsController.cs" />
+    <Compile Include="Controllers\Emagazine.cs" />
+    <Compile Include="Controllers\MostActivityController.cs" />
+    <Compile Include="Controllers\MostCommentController.cs" />
+    <Compile Include="Controllers\ChattingController.cs" />
+    <Compile Include="Controllers\GaleryPhotoController.cs" />
+    <Compile Include="Controllers\DataFileController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\SlideshowController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListUserGroupController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuestionAndAnswersController.cs" />
+    <Compile Include="Controllers\QuestionController.cs" />
+    <Compile Include="Controllers\SosmedController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\UserGroupController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DatePicker\jquery-ui.css" />
+    <Content Include="Content\dropzone\css\basic.css" />
+    <Content Include="Content\dropzone\css\dropzone.css" />
+    <Content Include="Content\dropzone\dropzone.js" />
+    <Content Include="Content\dropzone\dropzone.min.js" />
+    <Content Include="Content\dropzone\form-dropzone.js" />
+    <Content Include="Content\dropzone\images\spritemap%402x.png" />
+    <Content Include="Content\dropzone\images\spritemap.png" />
+    <Content Include="Content\dropzone\metronic.js" />
+    <Content Include="Content\Floara\css\froala_editor.css" />
+    <Content Include="Content\Floara\css\froala_editor.min.css" />
+    <Content Include="Content\Floara\css\froala_editor.pkgd.css" />
+    <Content Include="Content\Floara\css\froala_editor.pkgd.min.css" />
+    <Content Include="Content\Floara\css\froala_style.css" />
+    <Content Include="Content\Floara\css\froala_style.min.css" />
+    <Content Include="Content\Floara\css\plugins\char_counter.css" />
+    <Content Include="Content\Floara\css\plugins\char_counter.min.css" />
+    <Content Include="Content\Floara\css\plugins\code_view.css" />
+    <Content Include="Content\Floara\css\plugins\code_view.min.css" />
+    <Content Include="Content\Floara\css\plugins\colors.css" />
+    <Content Include="Content\Floara\css\plugins\colors.min.css" />
+    <Content Include="Content\Floara\css\plugins\draggable.css" />
+    <Content Include="Content\Floara\css\plugins\draggable.min.css" />
+    <Content Include="Content\Floara\css\plugins\emoticons.css" />
+    <Content Include="Content\Floara\css\plugins\emoticons.min.css" />
+    <Content Include="Content\Floara\css\plugins\file.css" />
+    <Content Include="Content\Floara\css\plugins\file.min.css" />
+    <Content Include="Content\Floara\css\plugins\fullscreen.css" />
+    <Content Include="Content\Floara\css\plugins\fullscreen.min.css" />
+    <Content Include="Content\Floara\css\plugins\help.css" />
+    <Content Include="Content\Floara\css\plugins\help.min.css" />
+    <Content Include="Content\Floara\css\plugins\image.css" />
+    <Content Include="Content\Floara\css\plugins\image.min.css" />
+    <Content Include="Content\Floara\css\plugins\image_manager.css" />
+    <Content Include="Content\Floara\css\plugins\image_manager.min.css" />
+    <Content Include="Content\Floara\css\plugins\line_breaker.css" />
+    <Content Include="Content\Floara\css\plugins\line_breaker.min.css" />
+    <Content Include="Content\Floara\css\plugins\quick_insert.css" />
+    <Content Include="Content\Floara\css\plugins\quick_insert.min.css" />
+    <Content Include="Content\Floara\css\plugins\special_characters.css" />
+    <Content Include="Content\Floara\css\plugins\special_characters.min.css" />
+    <Content Include="Content\Floara\css\plugins\table.css" />
+    <Content Include="Content\Floara\css\plugins\table.min.css" />
+    <Content Include="Content\Floara\css\plugins\video.css" />
+    <Content Include="Content\Floara\css\plugins\video.min.css" />
+    <Content Include="Content\Floara\css\themes\dark.css" />
+    <Content Include="Content\Floara\css\themes\dark.min.css" />
+    <Content Include="Content\Floara\css\themes\gray.css" />
+    <Content Include="Content\Floara\css\themes\gray.min.css" />
+    <Content Include="Content\Floara\css\themes\red.css" />
+    <Content Include="Content\Floara\css\themes\red.min.css" />
+    <Content Include="Content\Floara\css\themes\royal.css" />
+    <Content Include="Content\Floara\css\themes\royal.min.css" />
+    <Content Include="Content\Floara\css\third_party\embedly.css" />
+    <Content Include="Content\Floara\css\third_party\embedly.min.css" />
+    <Content Include="Content\Floara\css\third_party\spell_checker.css" />
+    <Content Include="Content\Floara\css\third_party\spell_checker.min.css" />
+    <Content Include="Content\Floara\editor.jpg" />
+    <Content Include="Content\Floara\html\3rd-party\at.js.html" />
+    <Content Include="Content\Floara\html\3rd-party\aviary\index.html" />
+    <Content Include="Content\Floara\html\3rd-party\bootstrap\grid.html" />
+    <Content Include="Content\Floara\html\3rd-party\bootstrap\lists.html" />
+    <Content Include="Content\Floara\html\3rd-party\bootstrap\modal.html" />
+    <Content Include="Content\Floara\html\3rd-party\code-mirror.html" />
+    <Content Include="Content\Floara\html\3rd-party\font-awesome-5-css.html" />
+    <Content Include="Content\Floara\html\3rd-party\font-awesome-5-js.html" />
+    <Content Include="Content\Floara\html\3rd-party\jquery\mobile.html" />
+    <Content Include="Content\Floara\html\3rd-party\jquery\ui_modal.html" />
+    <Content Include="Content\Floara\html\3rd-party\require_js\index.html" />
+    <Content Include="Content\Floara\html\3rd-party\require_js\js\app.js" />
+    <Content Include="Content\Floara\html\3rd-party\require_js\js\lib\require.js" />
+    <Content Include="Content\Floara\html\3rd-party\spell-checker\spell-checker.html" />
+    <Content Include="Content\Floara\html\api\get_html.html" />
+    <Content Include="Content\Floara\html\api\init_destroy.html" />
+    <Content Include="Content\Floara\html\api\insert_html.html" />
+    <Content Include="Content\Floara\html\api\live_code_preview.html" />
+    <Content Include="Content\Floara\html\api\live_content_preview.html" />
+    <Content Include="Content\Floara\html\api\selection.html" />
+    <Content Include="Content\Floara\html\buttons\custom_buttons.html" />
+    <Content Include="Content\Floara\html\buttons\custom_dropdown.html" />
+    <Content Include="Content\Floara\html\buttons\external_button.html" />
+    <Content Include="Content\Floara\html\buttons\subscript_superscript.html" />
+    <Content Include="Content\Floara\html\events\blur_focus.html" />
+    <Content Include="Content\Floara\html\events\content_changed.html" />
+    <Content Include="Content\Floara\html\events\drop.html" />
+    <Content Include="Content\Floara\html\events\image_removed.html" />
+    <Content Include="Content\Floara\html\events\initialized_destroy.html" />
+    <Content Include="Content\Floara\html\image\custom_button.html" />
+    <Content Include="Content\Floara\html\image\default_width.html" />
+    <Content Include="Content\Floara\html\image\image_styles.html" />
+    <Content Include="Content\Floara\html\image\insert_base64.html" />
+    <Content Include="Content\Floara\html\initialization\edit_in_popup.html" />
+    <Content Include="Content\Floara\html\initialization\initialized_event.html" />
+    <Content Include="Content\Floara\html\initialization\init_on_button.html" />
+    <Content Include="Content\Floara\html\initialization\init_on_click.html" />
+    <Content Include="Content\Floara\html\initialization\init_on_h1.html" />
+    <Content Include="Content\Floara\html\initialization\init_on_image.html" />
+    <Content Include="Content\Floara\html\initialization\init_on_link.html" />
+    <Content Include="Content\Floara\html\init_inside_iframe\basic.html" />
+    <Content Include="Content\Floara\html\init_inside_iframe\content.html" />
+    <Content Include="Content\Floara\html\init_inside_iframe\inline.html" />
+    <Content Include="Content\Floara\html\init_on_click\basic.html" />
+    <Content Include="Content\Floara\html\init_on_click\inline.html" />
+    <Content Include="Content\Floara\html\init_on_click\two_editors.html" />
+    <Content Include="Content\Floara\html\international\direction_rtl.html" />
+    <Content Include="Content\Floara\html\international\language.html" />
+    <Content Include="Content\Floara\html\international\rtl_ltr_buttons.html" />
+    <Content Include="Content\Floara\html\link\custom_validation.html" />
+    <Content Include="Content\Floara\html\link\link_styles.html" />
+    <Content Include="Content\Floara\html\link\predefined_links.html" />
+    <Content Include="Content\Floara\html\misc\scrollable_container.html" />
+    <Content Include="Content\Floara\html\misc\scrollable_container_inline.html" />
+    <Content Include="Content\Floara\html\paragraph_modes\enter_br.html" />
+    <Content Include="Content\Floara\html\paragraph_modes\enter_div.html" />
+    <Content Include="Content\Floara\html\paragraph_modes\enter_p.html" />
+    <Content Include="Content\Floara\html\paste\attrs.html" />
+    <Content Include="Content\Floara\html\paste\plain.html" />
+    <Content Include="Content\Floara\html\paste\tags.html" />
+    <Content Include="Content\Floara\html\plugins\char_counter.html" />
+    <Content Include="Content\Floara\html\plugins\full_screen.html" />
+    <Content Include="Content\Floara\html\plugins\line_breaker.html" />
+    <Content Include="Content\Floara\html\plugins\quick_insert.html" />
+    <Content Include="Content\Floara\html\popular\disable_edit.html" />
+    <Content Include="Content\Floara\html\popular\disable_paragraphs.html" />
+    <Content Include="Content\Floara\html\popular\full.html" />
+    <Content Include="Content\Floara\html\popular\full_page.html" />
+    <Content Include="Content\Floara\html\popular\iframe.html" />
+    <Content Include="Content\Floara\html\popular\init_on_click.html" />
+    <Content Include="Content\Floara\html\popular\textarea.html" />
+    <Content Include="Content\Floara\html\popular\toolbar_buttons.html" />
+    <Content Include="Content\Floara\html\popular\toolbar_inline.html" />
+    <Content Include="Content\Floara\html\popular\two_instances.html" />
+    <Content Include="Content\Floara\html\popular\z_index.html" />
+    <Content Include="Content\Floara\html\popups\colors.html" />
+    <Content Include="Content\Floara\html\popups\custom.html" />
+    <Content Include="Content\Floara\html\popups\emoticons.html" />
+    <Content Include="Content\Floara\html\styling\adjustable_height.html" />
+    <Content Include="Content\Floara\html\styling\font_family.html" />
+    <Content Include="Content\Floara\html\styling\height.html" />
+    <Content Include="Content\Floara\html\styling\inline.html" />
+    <Content Include="Content\Floara\html\styling\paragraph.html" />
+    <Content Include="Content\Floara\html\styling\placeholder.html" />
+    <Content Include="Content\Floara\html\styling\width.html" />
+    <Content Include="Content\Floara\html\table\cell_style.html" />
+    <Content Include="Content\Floara\html\table\insert_helper.html" />
+    <Content Include="Content\Floara\html\table\nested.html" />
+    <Content Include="Content\Floara\html\table\resize.html" />
+    <Content Include="Content\Floara\html\table\style.html" />
+    <Content Include="Content\Floara\html\tests\bottom_offset_scrollable_container.html" />
+    <Content Include="Content\Floara\html\tests\bottom_scrollable_container.html" />
+    <Content Include="Content\Floara\html\tests\core.html" />
+    <Content Include="Content\Floara\html\tests\full_br.html" />
+    <Content Include="Content\Floara\html\tests\full_page_bottom.html" />
+    <Content Include="Content\Floara\html\tests\image_manager.html" />
+    <Content Include="Content\Floara\html\tests\init_on_click\full_page.html" />
+    <Content Include="Content\Floara\html\tests\max_height.html" />
+    <Content Include="Content\Floara\html\tests\toolbar_inline_two.html" />
+    <Content Include="Content\Floara\html\tests\top_offset_scrollable_container.html" />
+    <Content Include="Content\Floara\html\tests\top_scrollable_container.html" />
+    <Content Include="Content\Floara\html\themes\dark.html" />
+    <Content Include="Content\Floara\html\themes\gray.html" />
+    <Content Include="Content\Floara\html\themes\red.html" />
+    <Content Include="Content\Floara\html\themes\royal.html" />
+    <Content Include="Content\Floara\html\toolbar\bottom.html" />
+    <Content Include="Content\Floara\html\toolbar\bottom_offset.html" />
+    <Content Include="Content\Floara\html\toolbar\buttons.html" />
+    <Content Include="Content\Floara\html\toolbar\external.html" />
+    <Content Include="Content\Floara\html\toolbar\external_inline.html" />
+    <Content Include="Content\Floara\html\toolbar\inline.html" />
+    <Content Include="Content\Floara\html\toolbar\inline_selection.html" />
+    <Content Include="Content\Floara\html\toolbar\offset.html" />
+    <Content Include="Content\Floara\html\toolbar\show_selection.html" />
+    <Content Include="Content\Floara\html\toolbar\sticky.html" />
+    <Content Include="Content\Floara\html\typing\keep_format.html" />
+    <Content Include="Content\Floara\html\typing\shortcuts.html" />
+    <Content Include="Content\Floara\html\typing\tab.html" />
+    <Content Include="Content\Floara\img\photo1.jpg" />
+    <Content Include="Content\Floara\index.html" />
+    <Content Include="Content\Floara\js\froala_editor.min.js" />
+    <Content Include="Content\Floara\js\froala_editor.pkgd.min.js" />
+    <Content Include="Content\Floara\js\languages\ar.js" />
+    <Content Include="Content\Floara\js\languages\bs.js" />
+    <Content Include="Content\Floara\js\languages\cs.js" />
+    <Content Include="Content\Floara\js\languages\da.js" />
+    <Content Include="Content\Floara\js\languages\de.js" />
+    <Content Include="Content\Floara\js\languages\en_ca.js" />
+    <Content Include="Content\Floara\js\languages\en_gb.js" />
+    <Content Include="Content\Floara\js\languages\es.js" />
+    <Content Include="Content\Floara\js\languages\et.js" />
+    <Content Include="Content\Floara\js\languages\fa.js" />
+    <Content Include="Content\Floara\js\languages\fi.js" />
+    <Content Include="Content\Floara\js\languages\fr.js" />
+    <Content Include="Content\Floara\js\languages\he.js" />
+    <Content Include="Content\Floara\js\languages\hr.js" />
+    <Content Include="Content\Floara\js\languages\hu.js" />
+    <Content Include="Content\Floara\js\languages\id.js" />
+    <Content Include="Content\Floara\js\languages\it.js" />
+    <Content Include="Content\Floara\js\languages\ja.js" />
+    <Content Include="Content\Floara\js\languages\ko.js" />
+    <Content Include="Content\Floara\js\languages\me.js" />
+    <Content Include="Content\Floara\js\languages\nb.js" />
+    <Content Include="Content\Floara\js\languages\nl.js" />
+    <Content Include="Content\Floara\js\languages\pl.js" />
+    <Content Include="Content\Floara\js\languages\pt_br.js" />
+    <Content Include="Content\Floara\js\languages\pt_pt.js" />
+    <Content Include="Content\Floara\js\languages\ro.js" />
+    <Content Include="Content\Floara\js\languages\ru.js" />
+    <Content Include="Content\Floara\js\languages\sk.js" />
+    <Content Include="Content\Floara\js\languages\sr.js" />
+    <Content Include="Content\Floara\js\languages\sv.js" />
+    <Content Include="Content\Floara\js\languages\th.js" />
+    <Content Include="Content\Floara\js\languages\tr.js" />
+    <Content Include="Content\Floara\js\languages\uk.js" />
+    <Content Include="Content\Floara\js\languages\vi.js" />
+    <Content Include="Content\Floara\js\languages\zh_cn.js" />
+    <Content Include="Content\Floara\js\languages\zh_tw.js" />
+    <Content Include="Content\Floara\js\plugins\align.min.js" />
+    <Content Include="Content\Floara\js\plugins\char_counter.min.js" />
+    <Content Include="Content\Floara\js\plugins\code_beautifier.min.js" />
+    <Content Include="Content\Floara\js\plugins\code_view.min.js" />
+    <Content Include="Content\Floara\js\plugins\colors.min.js" />
+    <Content Include="Content\Floara\js\plugins\draggable.min.js" />
+    <Content Include="Content\Floara\js\plugins\emoticons.min.js" />
+    <Content Include="Content\Floara\js\plugins\entities.min.js" />
+    <Content Include="Content\Floara\js\plugins\file.min.js" />
+    <Content Include="Content\Floara\js\plugins\font_family.min.js" />
+    <Content Include="Content\Floara\js\plugins\font_size.min.js" />
+    <Content Include="Content\Floara\js\plugins\forms.min.js" />
+    <Content Include="Content\Floara\js\plugins\fullscreen.min.js" />
+    <Content Include="Content\Floara\js\plugins\help.min.js" />
+    <Content Include="Content\Floara\js\plugins\image.min.js" />
+    <Content Include="Content\Floara\js\plugins\image_manager.min.js" />
+    <Content Include="Content\Floara\js\plugins\inline_style.min.js" />
+    <Content Include="Content\Floara\js\plugins\line_breaker.min.js" />
+    <Content Include="Content\Floara\js\plugins\link.min.js" />
+    <Content Include="Content\Floara\js\plugins\lists.min.js" />
+    <Content Include="Content\Floara\js\plugins\paragraph_format.min.js" />
+    <Content Include="Content\Floara\js\plugins\paragraph_style.min.js" />
+    <Content Include="Content\Floara\js\plugins\print.min.js" />
+    <Content Include="Content\Floara\js\plugins\quick_insert.min.js" />
+    <Content Include="Content\Floara\js\plugins\quote.min.js" />
+    <Content Include="Content\Floara\js\plugins\save.min.js" />
+    <Content Include="Content\Floara\js\plugins\special_characters.min.js" />
+    <Content Include="Content\Floara\js\plugins\table.min.js" />
+    <Content Include="Content\Floara\js\plugins\url.min.js" />
+    <Content Include="Content\Floara\js\plugins\video.min.js" />
+    <Content Include="Content\Floara\js\plugins\word_paste.min.js" />
+    <Content Include="Content\Floara\js\third_party\embedly.min.js" />
+    <Content Include="Content\Floara\js\third_party\image_aviary.min.js" />
+    <Content Include="Content\Floara\js\third_party\spell_checker.min.js" />
+    <Content Include="Content\Floara\License.txt" />
+    <Content Include="Content\Gemagrafi\css\bootstrap.css" />
+    <Content Include="Content\Gemagrafi\css\etalage.css" />
+    <Content Include="Content\Gemagrafi\css\form.css" />
+    <Content Include="Content\Gemagrafi\css\nav.css" />
+    <Content Include="Content\Gemagrafi\css\style.css" />
+    <Content Include="Content\Gemagrafi\images\a1.JPG" />
+    <Content Include="Content\Gemagrafi\images\a10.jpg" />
+    <Content Include="Content\Gemagrafi\images\a11.jpg" />
+    <Content Include="Content\Gemagrafi\images\a12.jpg" />
+    <Content Include="Content\Gemagrafi\images\a13.jpg" />
+    <Content Include="Content\Gemagrafi\images\a14.JPG" />
+    <Content Include="Content\Gemagrafi\images\a15.jpg" />
+    <Content Include="Content\Gemagrafi\images\a16.JPG" />
+    <Content Include="Content\Gemagrafi\images\a2.jpg" />
+    <Content Include="Content\Gemagrafi\images\a3.jpg" />
+    <Content Include="Content\Gemagrafi\images\a3.png" />
+    <Content Include="Content\Gemagrafi\images\a4.jpg" />
+    <Content Include="Content\Gemagrafi\images\a5.jpg" />
+    <Content Include="Content\Gemagrafi\images\a6.jpg" />
+    <Content Include="Content\Gemagrafi\images\a7.jpg" />
+    <Content Include="Content\Gemagrafi\images\a8.jpg" />
+    <Content Include="Content\Gemagrafi\images\a9.jpg" />
+    <Content Include="Content\Gemagrafi\images\b-arrow.png" />
+    <Content Include="Content\Gemagrafi\images\bg.jpg" />
+    <Content Include="Content\Gemagrafi\images\bik1.jpg" />
+    <Content Include="Content\Gemagrafi\images\bik2.jpg" />
+    <Content Include="Content\Gemagrafi\images\bik3.jpg" />
+    <Content Include="Content\Gemagrafi\images\bik4.jpg" />
+    <Content Include="Content\Gemagrafi\images\bik5.jpg" />
+    <Content Include="Content\Gemagrafi\images\bik6.jpg" />
+    <Content Include="Content\Gemagrafi\images\c1.jpg" />
+    <Content Include="Content\Gemagrafi\images\c2.jpg" />
+    <Content Include="Content\Gemagrafi\images\c3.jpg" />
+    <Content Include="Content\Gemagrafi\images\cart.png" />
+    <Content Include="Content\Gemagrafi\images\cate.jpg" />
+    <Content Include="Content\Gemagrafi\images\close.png" />
+    <Content Include="Content\Gemagrafi\images\contact.jpg" />
+    <Content Include="Content\Gemagrafi\images\dwn.png" />
+    <Content Include="Content\Gemagrafi\images\logo.png" />
+    <Content Include="Content\Gemagrafi\images\logo2.png" />
+    <Content Include="Content\Gemagrafi\images\m1.jpg" />
+    <Content Include="Content\Gemagrafi\images\m2.jpg" />
+    <Content Include="Content\Gemagrafi\images\m3.jpg" />
+    <Content Include="Content\Gemagrafi\images\m4.jpg" />
+    <Content Include="Content\Gemagrafi\images\menu-arrow.png" />
+    <Content Include="Content\Gemagrafi\images\p1.jpg" />
+    <Content Include="Content\Gemagrafi\images\p10.jpg" />
+    <Content Include="Content\Gemagrafi\images\p11.jpg" />
+    <Content Include="Content\Gemagrafi\images\p12.jpg" />
+    <Content Include="Content\Gemagrafi\images\p13.jpg" />
+    <Content Include="Content\Gemagrafi\images\p14.jpg" />
+    <Content Include="Content\Gemagrafi\images\p15.jpg" />
+    <Content Include="Content\Gemagrafi\images\p16.JPG" />
+    <Content Include="Content\Gemagrafi\images\p2.jpg" />
+    <Content Include="Content\Gemagrafi\images\p3.jpg" />
+    <Content Include="Content\Gemagrafi\images\p4.jpg" />
+    <Content Include="Content\Gemagrafi\images\p5.JPG" />
+    <Content Include="Content\Gemagrafi\images\p6.JPG" />
+    <Content Include="Content\Gemagrafi\images\p7.JPG" />
+    <Content Include="Content\Gemagrafi\images\p8.jpg" />
+    <Content Include="Content\Gemagrafi\images\p9.jpg" />
+    <Content Include="Content\Gemagrafi\images\p_minus.png" />
+    <Content Include="Content\Gemagrafi\images\p_plus.png" />
+    <Content Include="Content\Gemagrafi\images\r1.jpg" />
+    <Content Include="Content\Gemagrafi\images\r2.jpg" />
+    <Content Include="Content\Gemagrafi\images\r3.jpg" />
+    <Content Include="Content\Gemagrafi\images\r4.jpg" />
+    <Content Include="Content\Gemagrafi\images\s1.jpg" />
+    <Content Include="Content\Gemagrafi\images\s2.jpg" />
+    <Content Include="Content\Gemagrafi\images\s3.jpg" />
+    <Content Include="Content\Gemagrafi\images\s4.jpg" />
+    <Content Include="Content\Gemagrafi\images\scroll.png" />
+    <Content Include="Content\Gemagrafi\images\slid.png" />
+    <Content Include="Content\Gemagrafi\js\jquery.etalage.min.js" />
+    <Content Include="Content\img\01.jpg" />
+    <Content Include="Content\img\01b.jpg" />
+    <Content Include="Content\img\02.jpg" />
+    <Content Include="Content\img\02b.jpg" />
+    <Content Include="Content\img\03.jpg" />
+    <Content Include="Content\img\03b.jpg" />
+    <Content Include="Content\img\04.jpg" />
+    <Content Include="Content\img\04b.jpg" />
+    <Content Include="Content\img\05.jpg" />
+    <Content Include="Content\img\05b.jpg" />
+    <Content Include="Content\img\06.jpg" />
+    <Content Include="Content\img\06b.jpg" />
+    <Content Include="Content\img\07.jpg" />
+    <Content Include="Content\img\07b.jpg" />
+    <Content Include="Content\img\08.jpg" />
+    <Content Include="Content\img\08b.jpg" />
+    <Content Include="Content\img\09.jpg" />
+    <Content Include="Content\img\09b.jpg" />
+    <Content Include="Content\img\1.jpg" />
+    <Content Include="Content\img\10.jpg" />
+    <Content Include="Content\img\10b.jpg" />
+    <Content Include="Content\img\11.jpg" />
+    <Content Include="Content\img\11b.jpg" />
+    <Content Include="Content\img\12.jpg" />
+    <Content Include="Content\img\12b.jpg" />
+    <Content Include="Content\img\37.jpg" />
+    <Content Include="Content\img\42.jpg" />
+    <Content Include="Content\img\53.jpg" />
+    <Content Include="Content\img\57.jpg" />
+    <Content Include="Content\img\59.jpg" />
+    <Content Include="Content\img\a11.jpg" />
+    <Content Include="Content\img\a9.jpg" />
+    <Content Include="Content\img\avatar.png" />
+    <Content Include="Content\img\avatar1.jpg" />
+    <Content Include="Content\img\avatar10.jpg" />
+    <Content Include="Content\img\avatar11.jpg" />
+    <Content Include="Content\img\avatar2.jpg" />
+    <Content Include="Content\img\avatar3.jpg" />
+    <Content Include="Content\img\avatar4.jpg" />
+    <Content Include="Content\img\avatar6.jpg" />
+    <Content Include="Content\img\avatar7.jpg" />
+    <Content Include="Content\img\avatar8.jpg" />
+    <Content Include="Content\img\avatar9.jpg" />
+    <Content Include="Content\img\Chrysanthemum.jpg" />
+    <Content Include="Content\img\Desert.jpg" />
+    <Content Include="Content\img\header-bg.jpg" />
+    <Content Include="Content\img\Hydrangeas.jpg" />
+    <Content Include="Content\img\Jellyfish.jpg" />
+    <Content Include="Content\img\Koala.jpg" />
+    <Content Include="Content\img\Lighthouse.jpg" />
+    <Content Include="Content\img\logo-gemagrafi.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logoTourismpedia.jpg" />
+    <Content Include="Content\img\menu-toggler.png" />
+    <Content Include="Content\img\Penguins.jpg" />
+    <Content Include="Content\img\r3.jpg" />
+    <Content Include="Content\img\s1.jpg" />
+    <Content Include="Content\img\s2.jpg" />
+    <Content Include="Content\img\SBH.jpg" />
+    <Content Include="Content\img\Tulips.jpg" />
+    <Content Include="Content\MetronicsPure\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\MetronicsPure\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\MetronicsPure\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\MetronicsPure\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\MetronicsPure\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\MetronicsPure\bootstrap\js\npm.js" />
+    <Content Include="Content\MetronicsPure\datatables.min.js" />
+    <Content Include="Content\MetronicsPure\layout\css\custom.css" />
+    <Content Include="Content\MetronicsPure\layout\css\layout.css" />
+    <Content Include="Content\MetronicsPure\layout\css\layout.min.css" />
+    <Content Include="Content\MetronicsPure\layout\css\themes\blue.css" />
+    <Content Include="Content\MetronicsPure\layout\css\themes\darkblue.css" />
+    <Content Include="Content\MetronicsPure\layout\css\themes\default.css" />
+    <Content Include="Content\MetronicsPure\layout\css\themes\grey.css" />
+    <Content Include="Content\MetronicsPure\layout\css\themes\light.css" />
+    <Content Include="Content\MetronicsPure\layout\css\themes\light2.css" />
+    <Content Include="Content\MetronicsPure\layout\img\ajax-loading.gif" />
+    <Content Include="Content\MetronicsPure\layout\img\ajax-modal-loading.gif" />
+    <Content Include="Content\MetronicsPure\layout\img\arrow-down.png" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar.png" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar1.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar10.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar11.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar1_small.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar2.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar3.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar3_small.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar4.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar5.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar6.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar7.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar8.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\avatar9.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\hor-menu-red-arrow.png" />
+    <Content Include="Content\MetronicsPure\layout\img\icon-color-close.png" />
+    <Content Include="Content\MetronicsPure\layout\img\icon-color.png" />
+    <Content Include="Content\MetronicsPure\layout\img\icon-img-down.png" />
+    <Content Include="Content\MetronicsPure\layout\img\icon-img-up.png" />
+    <Content Include="Content\MetronicsPure\layout\img\inbox-nav-arrow-blue.png" />
+    <Content Include="Content\MetronicsPure\layout\img\loading-spinner-blue.gif" />
+    <Content Include="Content\MetronicsPure\layout\img\loading-spinner-default.gif" />
+    <Content Include="Content\MetronicsPure\layout\img\loading-spinner-grey.gif" />
+    <Content Include="Content\MetronicsPure\layout\img\loading.gif" />
+    <Content Include="Content\MetronicsPure\layout\img\logo-big-white.png" />
+    <Content Include="Content\MetronicsPure\layout\img\logo-big.png" />
+    <Content Include="Content\MetronicsPure\layout\img\logo-invert.png" />
+    <Content Include="Content\MetronicsPure\layout\img\logo.png" />
+    <Content Include="Content\MetronicsPure\layout\img\menu-toggler.png" />
+    <Content Include="Content\MetronicsPure\layout\img\photo1.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\photo2.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\photo3.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\remove-icon-small.png" />
+    <Content Include="Content\MetronicsPure\layout\img\search_icon_light.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar-menu-arrow-reverse.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar-menu-arrow-right.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar-menu-arrow.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_arrow_icon_light.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_arrow_icon_light_rtl.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_inline_toggler_icon_blue.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_inline_toggler_icon_darkblue.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_inline_toggler_icon_default.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_inline_toggler_icon_grey.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_inline_toggler_icon_light.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_inline_toggler_icon_light2.jpg" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_toggler_icon_blue.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_toggler_icon_darkblue.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_toggler_icon_default.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_toggler_icon_grey.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_toggler_icon_light.png" />
+    <Content Include="Content\MetronicsPure\layout\img\sidebar_toggler_icon_light2.png" />
+    <Content Include="Content\MetronicsPure\layout\scripts\demo.js" />
+    <Content Include="Content\MetronicsPure\layout\scripts\layout.js" />
+    <Content Include="Content\MetronicsPure\layout\scripts\quick-sidebar.js" />
+    <Content Include="Content\MetronicsPure\pages\css\about-us.css" />
+    <Content Include="Content\MetronicsPure\pages\css\blog.css" />
+    <Content Include="Content\MetronicsPure\pages\css\coming-soon.css" />
+    <Content Include="Content\MetronicsPure\pages\css\error.css" />
+    <Content Include="Content\MetronicsPure\pages\css\image-crop.css" />
+    <Content Include="Content\MetronicsPure\pages\css\inbox.css" />
+    <Content Include="Content\MetronicsPure\pages\css\invoice.css" />
+    <Content Include="Content\MetronicsPure\pages\css\lock.css" />
+    <Content Include="Content\MetronicsPure\pages\css\lock2.css" />
+    <Content Include="Content\MetronicsPure\pages\css\login-soft.css" />
+    <Content Include="Content\MetronicsPure\pages\css\login.css" />
+    <Content Include="Content\MetronicsPure\pages\css\login2.css" />
+    <Content Include="Content\MetronicsPure\pages\css\login3.css" />
+    <Content Include="Content\MetronicsPure\pages\css\news.css" />
+    <Content Include="Content\MetronicsPure\pages\css\portfolio.css" />
+    <Content Include="Content\MetronicsPure\pages\css\pricing-table.css" />
+    <Content Include="Content\MetronicsPure\pages\css\pricing-tables.css" />
+    <Content Include="Content\MetronicsPure\pages\css\profile-old.css" />
+    <Content Include="Content\MetronicsPure\pages\css\profile.css" />
+    <Content Include="Content\MetronicsPure\pages\css\search.css" />
+    <Content Include="Content\MetronicsPure\pages\css\tasks.css" />
+    <Content Include="Content\MetronicsPure\pages\css\timeline-old.css" />
+    <Content Include="Content\MetronicsPure\pages\css\timeline.css" />
+    <Content Include="Content\MetronicsPure\pages\css\todo.css" />
+    <Content Include="Content\MetronicsPure\pages\img\bg-opacity.png" />
+    <Content Include="Content\MetronicsPure\pages\img\bg-white-lock.png" />
+    <Content Include="Content\MetronicsPure\pages\img\bg-white.png" />
+    <Content Include="Content\MetronicsPure\pages\img\inbox-nav-arrow-blue.png" />
+    <Content Include="Content\MetronicsPure\pages\media\bg\1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\bg\2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\bg\3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\bg\4.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\10.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\11.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\12.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\13.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\14.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\15.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\16.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\17.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\18.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\19.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\20.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\4.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\5.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\6.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\7.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\8.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\9.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\email\article.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\iphone.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\iphone_left.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\iphone_right.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\logo.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\photo1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\email\photo2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\email\photo3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\email\photo4.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\email\photo5.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\email\photo6.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\email\social_facebook.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\social_googleplus.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\social_linkedin.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\social_rss.png" />
+    <Content Include="Content\MetronicsPure\pages\media\email\social_twitter.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\image1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\image2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\image3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\image4.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\image5.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\item_img.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\item_img1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_02.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_03.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_04.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_05.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_06.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_07.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_08.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_09.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_10.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_11.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_12.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_13.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_14.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_15.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_16.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_17.png" />
+    <Content Include="Content\MetronicsPure\pages\media\gallery\preview_18.png" />
+    <Content Include="Content\MetronicsPure\pages\media\invoice\walmart.png" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\earth.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\img.png" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\img1.png" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\img1_2.png" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\img2.png" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\img3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\img3.png" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\img4.png" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\avatar.png" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\avatar1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\avatar1_small.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\avatar2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\avatar3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\avatar3_small.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\logo_azteca.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\logo_conquer.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\logo_metronic.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\photo1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\photo2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\photo3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\profile-img.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\profile-img.png" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\profile.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\profile\profile_user.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\search\1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\search\2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\search\img1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\search\img2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\search\img3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\users\avatar80_1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\users\avatar80_2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\users\avatar80_3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\users\avatar80_4.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\users\avatar80_5.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\users\avatar80_6.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\users\avatar80_7.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\users\avatar80_8.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\works\img1.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\works\img2.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\works\img3.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\works\img4.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\works\img5.jpg" />
+    <Content Include="Content\MetronicsPure\pages\media\works\img6.jpg" />
+    <Content Include="Content\MetronicsPure\pages\scripts\calendar.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\charts-amcharts.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\charts-flotcharts.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\coming-soon.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-context-menu.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-dropdowns.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-editors.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-form-tools.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-form-tools2.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-ion-sliders.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-jqueryui-sliders.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-knob-dials.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-nouisliders.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\components-pickers.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\contact-us.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\custom.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ecommerce-index.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ecommerce-orders-view.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ecommerce-orders.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ecommerce-products-edit.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ecommerce-products.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\form-dropzone.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\form-editable.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\form-fileupload.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\form-icheck.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\form-image-crop.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\form-samples.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\form-validation.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\form-wizard.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\inbox.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\index.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\index3.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\lock.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\login-soft.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\login.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\maps-google.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\maps-vector.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\portfolio.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\portlet-draggable.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\profile.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\search.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\table-advanced.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\table-ajax.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\table-editable.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\table-managed.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\table-tree.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\tasks.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\timeline.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\todo.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-alert-dialog-api.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-blockui.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-bootstrap-growl.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-confirmations.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-datepaginator.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-extended-modals.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-general.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-idletimeout.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-nestable.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-notific8.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-toastr.js" />
+    <Content Include="Content\MetronicsPure\pages\scripts\ui-tree.js" />
+    <Content Include="Content\img\SBH2.png" />
+    <Content Include="Content\MetronicsPure\bootstrap-social.css" />
+    <Content Include="Content\MetronicsPure\bootstrap-switch.min.css" />
+    <Content Include="Content\MetronicsPure\bootstrap.min.css" />
+    <Content Include="Content\MetronicsPure\components.min.css" />
+    <Content Include="Content\MetronicsPure\custom.min.css" />
+    <Content Include="Content\MetronicsPure\default.min.css" />
+    <Content Include="Content\MetronicsPure\font-awesome.min.css" />
+    <Content Include="Content\MetronicsPure\layout.min.css" />
+    <Content Include="Content\MetronicsPure\plugins.min.css" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\icons-lte-ie7.js" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\License.txt" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\Readme.txt" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\simple-line-icons.css" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\css\datepicker3.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ar.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.az.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.bg.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ca.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.cs.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.cy.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.da.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.de.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.el.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.et.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fa.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fi.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.fr.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.gl.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.he.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.hr.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.hu.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.id.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.is.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.it.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ja.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ka.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.kk.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.kr.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.lt.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.lv.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.mk.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ms.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nb.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl-BE.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.nl.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.no.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pl.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt-BR.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.pt.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ro.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs-latin.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.rs.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ru.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sk.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sl.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sq.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sv.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.sw.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.th.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.tr.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.ua.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.vi.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-CN.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\js\locales\bootstrap-datepicker.zh-TW.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-daterangepicker\daterangepicker-bs2.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-daterangepicker\daterangepicker-bs3.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-daterangepicker\moment.min.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\css\bootstrap-datetimepicker.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\bootstrap-datetimepicker.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.bg.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ca.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.cs.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.da.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.de.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.el.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.es.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.fi.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.fr.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.he.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.hr.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.hu.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.id.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.is.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.it.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ja.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.kr.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.lt.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.lv.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ms.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.nb.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.nl.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pl.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pt-BR.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.pt.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ro.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.rs-latin.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.rs.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ru.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sk.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sl.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sv.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.sw.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.th.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.tr.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.ua.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.uk.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\js\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-hover-dropdown\bootstrap-hover-dropdown.min.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-switch\css\bootstrap-switch.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-switch\css\bootstrap-switch.min.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-switch\js\bootstrap-switch.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-switch\js\bootstrap-switch.min.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-timepicker\css\bootstrap-timepicker.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-timepicker\css\bootstrap-timepicker.min.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-timepicker\js\bootstrap-timepicker.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-timepicker\js\bootstrap-timepicker.min.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\js\npm.js" />
+    <Content Include="Content\Metronics\global\plugins\css\components-md.css" />
+    <Content Include="Content\Metronics\global\plugins\css\components-rounded.css" />
+    <Content Include="Content\Metronics\global\plugins\css\components.css" />
+    <Content Include="Content\Metronics\global\plugins\css\plugins-md.css" />
+    <Content Include="Content\Metronics\global\plugins\css\plugins.css" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.colorhelpers.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.all.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.canvas.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.canvas.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.categories.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.categories.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.errorbars.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.image.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.navigate.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.pie.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.resize.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.selection.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.stack.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.symbol.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.threshold.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.time.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\jquery.flot.time.min.js" />
+    <Content Include="Content\Metronics\global\plugins\flot\LICENSE.txt" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\calendar.min.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\changelog.txt" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\agenda-views.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\basic-views.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\default.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\external-dragging.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\gcal.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\json.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\languages.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\selectable.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\theme.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\timezones.html" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\fullcalendar.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\fullcalendar.min.css" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\gcal.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang-all.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\ar-ma.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\ar-sa.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\ar.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\bg.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\ca.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\cs.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\da.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\de-at.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\de.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\el.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\en-au.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\en-ca.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\en-gb.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\es.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\fa.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\fi.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\fr-ca.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\fr.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\hi.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\hr.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\hu.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\id.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\is.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\it.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\ja.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\ko.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\lt.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\lv.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\nl.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\pl.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\pt-br.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\pt.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\ro.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\ru.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\sk.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\sl.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\sr-cyrl.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\sr.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\sv.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\th.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\tr.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\uk.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\vi.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\zh-cn.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lang\zh-tw.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\animated-overlay.gif" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\cupertino\jquery-ui.min.css" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\jquery-ui.custom.min.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\jquery.min.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\lib\moment.min.js" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\license.txt" />
+    <Content Include="Content\Metronics\global\plugins\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images\gritter-blue.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images\gritter-brown.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images\gritter-light.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images\gritter-long.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images\gritter-purple.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images\gritter.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images_original\gritter-light.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images_original\gritter-long.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images_original\gritter.png" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images_original\ie-spacer.gif" />
+    <Content Include="Content\Metronics\global\plugins\gritter\images_original\trees.jpg" />
+    <Content Include="Content\Metronics\global\plugins\gritter\index.html" />
+    <Content Include="Content\Metronics\global\plugins\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\Metronics\global\plugins\gritter\js\jquery.gritter.min.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery-easypiechart\angular.easypiechart.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery-easypiechart\angular.easypiechart.min.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery-easypiechart\jquery.easypiechart.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery-easypiechart\jquery.easypiechart.min.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery.pulsate.min.js" />
+    <Content Include="Content\Metronics\global\plugins\jquery.sparkline.min.js" />
+    <Content Include="Content\Metronics\global\plugins\layout\css\custom.css" />
+    <Content Include="Content\Metronics\global\plugins\layout\css\layout.css" />
+    <Content Include="Content\Metronics\global\plugins\layout\css\themes\blue.css" />
+    <Content Include="Content\Metronics\global\plugins\layout\css\themes\darkblue.css" />
+    <Content Include="Content\Metronics\global\plugins\layout\css\themes\default.css" />
+    <Content Include="Content\Metronics\global\plugins\layout\css\themes\grey.css" />
+    <Content Include="Content\Metronics\global\plugins\layout\css\themes\light.css" />
+    <Content Include="Content\Metronics\global\plugins\layout\css\themes\light2.css" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\ajax-loading.gif" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\ajax-modal-loading.gif" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\arrow-down.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar10.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar11.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar1_small.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar3_small.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar4.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar5.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar6.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar7.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar8.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\avatar9.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\hor-menu-red-arrow.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\icon-color-close.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\icon-color.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\icon-img-down.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\icon-img-up.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\inbox-nav-arrow-blue.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\loading-spinner-blue.gif" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\loading-spinner-default.gif" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\loading-spinner-grey.gif" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\loading.gif" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\logo-big-white.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\logo-big.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\logo-invert.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\logo.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\menu-toggler.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\photo1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\photo2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\photo3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\remove-icon-small.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\search_icon_light.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar-menu-arrow-reverse.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar-menu-arrow-right.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar-menu-arrow.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_arrow_icon_light.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_arrow_icon_light_rtl.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_inline_toggler_icon_blue.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_inline_toggler_icon_darkblue.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_inline_toggler_icon_default.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_inline_toggler_icon_grey.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_inline_toggler_icon_light.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_inline_toggler_icon_light2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_toggler_icon_blue.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_toggler_icon_darkblue.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_toggler_icon_default.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_toggler_icon_grey.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_toggler_icon_light.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\img\sidebar_toggler_icon_light2.png" />
+    <Content Include="Content\Metronics\global\plugins\layout\scripts\demo.js" />
+    <Content Include="Content\Metronics\global\plugins\layout\scripts\layout.js" />
+    <Content Include="Content\Metronics\global\plugins\layout\scripts\quick-sidebar.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\about-us.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\blog.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\coming-soon.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\error.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\image-crop.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\inbox.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\invoice.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\lock.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\lock2.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\login-soft.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\login.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\login2.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\login3.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\news.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\portfolio.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\pricing-table.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\pricing-tables.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\profile-old.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\profile.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\search.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\tasks.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\timeline-old.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\timeline.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\css\todo.css" />
+    <Content Include="Content\Metronics\global\plugins\pages\img\bg-opacity.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\img\bg-white-lock.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\img\bg-white.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\img\inbox-nav-arrow-blue.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\bg\1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\bg\2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\bg\3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\bg\4.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\10.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\11.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\12.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\13.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\14.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\15.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\16.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\17.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\18.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\19.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\20.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\4.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\5.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\6.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\7.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\8.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\9.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\article.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\iphone.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\iphone_left.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\iphone_right.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\logo.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\photo1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\photo2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\photo3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\photo4.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\photo5.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\photo6.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\social_facebook.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\social_googleplus.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\social_linkedin.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\social_rss.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\email\social_twitter.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\image1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\image2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\image3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\image4.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\image5.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\item_img.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\item_img1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_02.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_03.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_04.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_05.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_06.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_07.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_08.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_09.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_10.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_11.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_12.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_13.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_14.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_15.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_16.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_17.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\gallery\preview_18.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\invoice\walmart.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\earth.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\img.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\img1.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\img1_2.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\img2.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\img3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\img3.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\img4.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\avatar.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\avatar1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\avatar1_small.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\avatar2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\avatar3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\avatar3_small.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\logo_azteca.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\logo_conquer.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\logo_metronic.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\photo1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\photo2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\photo3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\profile-img.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\profile-img.png" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\profile.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\profile\profile_user.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\search\1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\search\2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\search\img1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\search\img2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\search\img3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\users\avatar80_1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\users\avatar80_2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\users\avatar80_3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\users\avatar80_4.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\users\avatar80_5.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\users\avatar80_6.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\users\avatar80_7.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\users\avatar80_8.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\works\img1.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\works\img2.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\works\img3.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\works\img4.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\works\img5.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\works\img6.jpg" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\calendar.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\charts-amcharts.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\charts-flotcharts.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\coming-soon.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-context-menu.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-dropdowns.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-editors.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-form-tools.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-form-tools2.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-ion-sliders.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-jqueryui-sliders.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-knob-dials.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-nouisliders.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\components-pickers.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\contact-us.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\custom.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ecommerce-index.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ecommerce-orders-view.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ecommerce-orders.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ecommerce-products-edit.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ecommerce-products.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\form-dropzone.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\form-editable.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\form-fileupload.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\form-icheck.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\form-image-crop.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\form-samples.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\form-validation.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\form-wizard.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\inbox.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\index.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\index3.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\lock.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\login-soft.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\login.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\maps-google.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\maps-vector.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\portfolio.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\portlet-draggable.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\profile.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\search.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\table-advanced.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\table-ajax.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\table-editable.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\table-managed.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\table-tree.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\tasks.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\timeline.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\todo.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-alert-dialog-api.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-blockui.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-bootstrap-growl.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-confirmations.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-datepaginator.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-extended-modals.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-general.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-idletimeout.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-nestable.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-notific8.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-toastr.js" />
+    <Content Include="Content\Metronics\global\plugins\pages\scripts\ui-tree.js" />
+    <Content Include="Content\Metronics\global\plugins\scripts\app.min.js" />
+    <Content Include="Content\Metronics\global\plugins\scripts\datatable.js" />
+    <Content Include="Content\Metronics\global\plugins\scripts\metronic.js" />
+    <Content Include="Content\Metronics\global\plugins\scripts\moment.min.js" />
+    <Content Include="Content\Metronics\global\plugins\scripts\toastr.min.css" />
+    <Content Include="Content\Metronics\global\plugins\scripts\toastr.min.js" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\icons-lte-ie7.js" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\License.txt" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\Readme.txt" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\simple-line-icons.css" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\simple-line-icons.min.css" />
+    <Content Include="Content\Persada\css\bootstrap-social.css" />
+    <Content Include="Content\Persada\css\custom-persada.css" />
+    <Content Include="Content\Persada\css\slideshow.css" />
+    <Content Include="Content\Persada\datatable\extensions\ColVis\js\dataTables.colVis.js" />
+    <Content Include="Content\Persada\datatable\extensions\TableTools\js\dataTables.tableTools.js" />
+    <Content Include="Content\Persada\datatable\extensions\TableTools\swf\copy_csv_xls.swf" />
+    <Content Include="Content\Persada\datatable\extensions\TableTools\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\Persada\datatable\jquery.dataTables.bootstrap.js" />
+    <Content Include="Content\Persada\datatable\jquery.dataTables.js" />
+    <Content Include="Content\Persada\js\Helpers\Common.js" />
+    <Content Include="Content\Persada\js\Helpers\GoogleMap.js" />
+    <Content Include="Content\Persada\js\Helpers\Modal.js" />
+    <Content Include="Content\Persada\js\Helpers\ResultStatus.js" />
+    <Content Include="Content\Persada\js\Helpers\StandardTable.js" />
+    <Content Include="Content\Persada\js\Helpers\Twitter.js" />
+    <Content Include="Content\Persada\style-page-magazine.css" />
+    <Content Include="Content\tinymce\tinymce\jquery.tinymce.min.js" />
+    <Content Include="Content\tinymce\tinymce\license.txt" />
+    <Content Include="Content\tinymce\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\codesample\css\prism.css" />
+    <Content Include="Content\tinymce\tinymce\plugins\codesample\plugin.dev.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\codesample\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="Content\tinymce\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\example\dialog.html" />
+    <Content Include="Content\tinymce\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\imagetools\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\paste\plugin.dev.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\spellchecker\plugin.dev.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\table\plugin.dev.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\toc\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Content\tinymce\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="Content\tinymce\tinymce\themes\inlite\theme.min.js" />
+    <Content Include="Content\tinymce\tinymce\themes\modern\theme.min.js" />
+    <Content Include="Content\tinymce\tinymce\tinymce.custom.persada.js" />
+    <Content Include="Content\tinymce\tinymce\tinymce.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\bootstrap-datetimepicker-build.less" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\_bootstrap-datetimepicker.less" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\CHANGELOG.md" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\less\datepicker.less" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\less\datepicker3.less" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\LICENSE" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datepicker\README.md" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-daterangepicker\README.md" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\less\datetimepicker.less" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\LICENSE" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-datetimepicker\README.md" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-hover-dropdown\LICENSE" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-hover-dropdown\README.md" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-switch\LICENSE" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-switch\README.md" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-timepicker\LICENSE" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap-timepicker\README.md" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Metronics\global\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\animated.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\core.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\icons.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\larger.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\list.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\mixins.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\path.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\stacked.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\less\variables.less" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_core.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_list.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_path.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\Metronics\global\plugins\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\json\events.json" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\php\get-events.php" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\php\get-timezones.php" />
+    <Content Include="Content\Metronics\global\plugins\fullcalendar\demos\php\utils.php" />
+    <Content Include="Content\Metronics\global\plugins\gritter\README.markdown" />
+    <Content Include="Content\Metronics\global\plugins\jquery-easypiechart\LICENSE" />
+    <Content Include="Content\Metronics\global\plugins\jquery-easypiechart\Readme.md" />
+    <Content Include="Content\Metronics\global\plugins\jquery-slimscroll\README.md" />
+    <Content Include="Content\Metronics\global\plugins\jquery-slimscroll\slimScroll.jquery.json" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\blog\Thumbs.db" />
+    <Content Include="Content\Metronics\global\plugins\pages\media\pages\Thumbs.db" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Content\Metronics\global\plugins\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Content\MetronicsPure\analytics.js" />
+    <Content Include="Content\MetronicsPure\app.min.js" />
+    <Content Include="Content\MetronicsPure\bootstrap-switch.min.js" />
+    <Content Include="Content\MetronicsPure\bootstrap.min.js" />
+    <Content Include="Content\MetronicsPure\css" />
+    <Content Include="Content\MetronicsPure\demo.min.js" />
+    <Content Include="Content\MetronicsPure\gtm.js" />
+    <Content Include="Content\MetronicsPure\jquery.blockui.min.js" />
+    <Content Include="Content\MetronicsPure\jquery.min.js" />
+    <Content Include="Content\MetronicsPure\jquery.slimscroll.min.js" />
+    <Content Include="Content\MetronicsPure\js.cookie.min.js" />
+    <Content Include="Content\MetronicsPure\layout.min.js" />
+    <Content Include="Content\MetronicsPure\quick-nav.min.js" />
+    <Content Include="Content\MetronicsPure\quick-sidebar.min.js" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Content\MetronicsPure\simple-line-icons\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Content\MetronicsPure\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\MetronicsPure\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\MetronicsPure\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\MetronicsPure\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\MetronicsPure\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\MetronicsPure\pages\media\blog\Thumbs.db" />
+    <Content Include="Content\MetronicsPure\pages\media\pages\Thumbs.db" />
+    <Content Include="Content\Floara\bower.json" />
+    <Content Include="Content\Floara\composer.json" />
+    <Content Include="Content\Floara\package.json" />
+    <Content Include="Content\Floara\html\file_s3_upload.php" />
+    <Content Include="Content\Floara\html\image_s3_upload.php" />
+    <Content Include="Content\tinymce\tinymce\langs\readme.md" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\AbsoluteLayout.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Animations.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Arrows.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Button.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ButtonGroup.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Checkbox.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ColorBox.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ColorButton.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ColorPicker.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ComboBox.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Container.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Content.Inline.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Content.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Content.Objects.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\CropRect.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\FieldSet.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\FitLayout.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\FloatPanel.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\FlowLayout.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Icons.Ie7.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Icons.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Iframe.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ImagePanel.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\InfoBox.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Label.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ListBox.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Menu.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\MenuBar.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\MenuButton.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\MenuItem.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Mixins.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Notification.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Panel.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Path.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Progress.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Radio.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Reset.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ResizeHandle.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Scrollable.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\SelectBox.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Sidebar.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\skin.dev.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\skin.ie7.dev.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\skin.ie7.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\skin.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Slider.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Spacer.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\SplitButton.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\StackLayout.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\TabPanel.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\TextBox.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Throbber.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\TinyMCE.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\ToolTip.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Variables.less" />
+    <Content Include="Content\tinymce\tinymce\skins\lightgray\Window.less" />
+    <Content Include="Content\dropzone\css\stylus\basic.styl" />
+    <Content Include="Content\dropzone\css\stylus\dropzone.styl" />
+    <Content Include="Content\dropzone\readme.md" />
+    <Content Include="Content\dropzone\upload.php" />
+    <None Include="Properties\PublishProfiles\SBH.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Controller\Chatting.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Modal.cshtml" />
+    <Content Include="Views\Shared\_QuickSidebar.cshtml" />
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Views\Home\ContactUs.cshtml" />
+    <Content Include="Views\Home\ErrorPage.cshtml" />
+    <Content Include="Views\Home\ErrorPageModal.cshtml" />
+    <Content Include="Views\User\ChangePassword.cshtml" />
+    <Content Include="Views\User\Delete.cshtml" />
+    <Content Include="Views\User\Detail.cshtml" />
+    <Content Include="Views\User\Edit.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Question\Question.cshtml" />
+    <Content Include="Views\Answer\Answer.cshtml" />
+    <Content Include="Views\Answer\Reply.cshtml" />
+    <Content Include="Views\QuestionAndAnswers\Create.cshtml" />
+    <Content Include="Views\QuestionAndAnswers\Delete.cshtml" />
+    <Content Include="Views\QuestionAndAnswers\Details.cshtml" />
+    <Content Include="Views\QuestionAndAnswers\Edit.cshtml" />
+    <Content Include="Views\QuestionAndAnswers\Index.cshtml" />
+    <Content Include="Views\Home\Index - Copy.cshtml" />
+    <Content Include="Views\Home\DetailQA.cshtml" />
+    <Content Include="Views\User\EditProfile.cshtml" />
+    <Content Include="Views\ListUserGroup\List.cshtml" />
+    <Content Include="Views\Shared\_Layout - Copy.cshtml" />
+    <Content Include="Views\Home\Pure.cshtml" />
+    <Content Include="Views\Shared\_Panel.cshtml" />
+    <Content Include="Views\Shared\_HeaderMenu.cshtml" />
+    <Content Include="Views\Shared\_HeaderTop.cshtml" />
+    <Content Include="Views\Shared\_PreFooter.cshtml" />
+    <Content Include="Views\Shared\_MainFooter.cshtml" />
+    <Content Include="Views\Shared\_QuickNav.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Detail.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Slideshow\Create.cshtml" />
+    <Content Include="Views\Slideshow\Delete.cshtml" />
+    <Content Include="Views\Slideshow\Detail.cshtml" />
+    <Content Include="Views\Slideshow\Edit.cshtml" />
+    <Content Include="Views\Slideshow\Index.cshtml" />
+    <Content Include="Views\News\Create.cshtml" />
+    <Content Include="Views\News\Delete.cshtml" />
+    <Content Include="Views\News\Detail.cshtml" />
+    <Content Include="Views\News\Edit.cshtml" />
+    <Content Include="Views\News\Index.cshtml" />
+    <Content Include="Views\Shared\_RelatedSide.cshtml" />
+    <Content Include="Views\News\ListNewsBox.cshtml" />
+    <Content Include="Views\News\DetailNewsBoxTemplate1.cshtml" />
+    <Content Include="Views\Sosmed\Create.cshtml" />
+    <Content Include="Views\Sosmed\Delete.cshtml" />
+    <Content Include="Views\Sosmed\Detail.cshtml" />
+    <Content Include="Views\Sosmed\Edit.cshtml" />
+    <Content Include="Views\Sosmed\Index.cshtml" />
+    <Content Include="Views\News\DetailNewsBoxTemplate2.cshtml" />
+    <Content Include="Views\News\_BannerSelected.cshtml" />
+    <Content Include="Views\User\ViewProfile.cshtml" />
+    <Content Include="Views\Shared\_QuickToggle.cshtml" />
+    <Content Include="Views\User\Profile.cshtml" />
+    <Content Include="Views\CategoryQuestions\AddData.cshtml" />
+    <Content Include="Views\CategoryQuestions\Detail.cshtml" />
+    <Content Include="Views\CategoryQuestions\ListCategory.cshtml" />
+    <Content Include="Views\CategoryQuestions\Remove.cshtml" />
+    <Content Include="Views\MostActivity\AddData.cshtml" />
+    <Content Include="Views\MostActivity\Detail.cshtml" />
+    <Content Include="Views\MostActivity\ListMostActivity.cshtml" />
+    <Content Include="Views\MostActivity\Remove.cshtml" />
+    <Content Include="Views\MostComment\AddData.cshtml" />
+    <Content Include="Views\MostComment\Detail.cshtml" />
+    <Content Include="Views\MostComment\ListMostComment.cshtml" />
+    <Content Include="Views\MostComment\Remove.cshtml" />
+    <Content Include="Views\UserGroup\AddData.cshtml" />
+    <Content Include="Views\UserGroup\Detail.cshtml" />
+    <Content Include="Views\UserGroup\ListGroup.cshtml" />
+    <Content Include="Views\UserGroup\Remove.cshtml" />
+    <Content Include="Views\ListUserGroup\ListUser.cshtml" />
+    <Content Include="Views\GaleryPhoto\Create.cshtml" />
+    <Content Include="Views\GaleryPhoto\Delete.cshtml" />
+    <Content Include="Views\GaleryPhoto\Detail.cshtml" />
+    <Content Include="Views\GaleryPhoto\Edit.cshtml" />
+    <Content Include="Views\GaleryPhoto\Index.cshtml" />
+    <Content Include="Views\Emagazine\Index.cshtml" />
+    <Content Include="Views\GaleryPhoto\ListGalery.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sbh.Fr.CommonFunction\Sbh.Fr.CommonFunction.csproj">
+      <Project>{77f65cb3-6b85-4b6b-b5ef-70db12ecb224}</Project>
+      <Name>Sbh.Fr.CommonFunction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbh.Fr.Facade\Sbh.Fr.Facade.csproj">
+      <Project>{0eae197c-7797-4877-a8da-4831c9655ef8}</Project>
+      <Name>Sbh.Fr.Facade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbh.Fr.Model.Custom\Sbh.Fr.Model.Custom.csproj">
+      <Project>{ee820550-2bc4-482a-95ec-b37ea888eb69}</Project>
+      <Name>Sbh.Fr.Model.Custom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sbh.Fr.Model\Sbh.Fr.Model.csproj">
+      <Project>{3d381191-ef9c-4534-96fe-96de12c667b5}</Project>
+      <Name>Sbh.Fr.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52325</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52325/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

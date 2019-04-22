@@ -1,0 +1,120 @@
+﻿@*@using Persada.Fr.CommonFunction;*@
+
+<div class="page-sidebar-wrapper">
+    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+    <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+    <div class="page-sidebar navbar-collapse collapse">
+        <!-- BEGIN SIDEBAR MENU -->
+        <ul class="page-sidebar-menu" data-auto-scroll="true" data-slide-speed="200">
+            <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+
+            <li class="sidebar-toggler-wrapper">
+                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                @*<div class="sidebar-toggler">
+                    </div>*@
+                <!-- END SIDEBAR TOGGLER BUTTON -->
+
+            </li>
+            <li class="@ViewBag.ActiveHome">
+                <a href="@Url.Action("Index", "Home")">
+                    <i class="icon-home"></i>
+                    <span class="title">Home</span>
+                    <span class="@ViewBag.SelectedHome"></span>
+                </a>
+            </li>
+
+            @if (Session["Id"] != null && bool.Parse(@HttpContext.Current.Session["IsSuperAdmin"].ToString()) != true)
+            {
+                <li class="@ViewBag.ActiveHome">
+                    <a href="@Url.Action("Question", "Question")">
+                        <i class="icon-question"></i>
+                        <span class="title">Question</span>
+                    </a>
+                </li>
+            }
+
+            @if (Session["IsSuperAdmin"] != null)
+            {
+                //if (bool.Parse(@HttpContext.Current.Session["IsSuperAdmin"].ToString()) == true)
+                //{
+                    <li class="@ViewBag.ActiveHome">
+                        <a href="@Url.Action("Answer", "Answer")">
+                            <i class="icon-pencil"></i>
+                            <span class="title">Answer</span>
+                        </a>
+                    </li>
+
+                    <li class="@ViewBag.ActiveSetupCategory">
+                        <a href="javascript:;">
+                            <i class="icon-settings"></i>
+                            <span class="title">Maintenance</span>
+                            <span class="arrow"></span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li class="@ViewBag.ActiveCategory">
+                                <a href="@Url.Action("Register", "User")">
+                                    <i class="icon-user"></i>
+                                    User Register
+                                </a>
+                            </li>
+                            <li class="@ViewBag.ActiveCategory">
+                                <a href="@Url.Action("ListGroup", "UserGroup")">
+                                    <i class="icon-pencil"></i>
+                                    User Group
+                                </a>
+                            </li>
+                            <li class="@ViewBag.ActiveCategory">
+                                <a href="@Url.Action("ListCategory", "CategoryQuestions")">
+                                    <i class="icon-pencil"></i>
+                                    Question Category
+                                </a>
+                            </li>
+                            <li class="@ViewBag.ActiveCategory">
+                                <a href="@Url.Action("ListMostActivity", "MostActivity")">
+                                    <i class="icon-pencil"></i>
+                                    Most Activity
+                                </a>
+                            </li>
+                            <li class="@ViewBag.ActiveCategory">
+                                <a href="@Url.Action("ListMostComment", "MostComment")">
+                                    <i class="icon-pencil"></i>
+                                    Most Comment
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                //}
+            }
+            <li class="@ViewBag.ActiveNews">
+                <a href="@Url.Action("News", "Home")">
+                    <i class="icon-docs"></i>
+                    <span class="title">News</span>
+                </a>
+            </li>
+
+            <li class="@ViewBag.ActiveAbout">
+                <a onclick="Modal('/Home/About/','','#myModal')" href="#">
+                    <i class="icon-info"></i>
+                    <span class="title">About</span>
+                </a>
+            </li>
+
+            <li class="@ViewBag.ActiveContactUs">
+                <a onclick="Modal('/Home/ContactUs/', '', '#myModal')" href="#">
+                    <i class="icon-call-end"></i>
+                    <span class="title">Contact Us</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+
+<script>
+    function ModalUnderMaintaince() {
+        var data = "<div class='modal-dialog'><div class='modal-content'><div class='modal-header'><button type='button' class='close' data-dismiss='modal'>&times;</button><h4 class='modal-title'>Oops</h4></div><div class='modal-body'><div class='row' style='text-align:center'><p>This section is under maintance. Please call admin<p></div></div><div class='modal-footer'></div></div></div>";
+        $('#myModal').html(data);
+        $('#myModal').modal();
+    }
+</script>

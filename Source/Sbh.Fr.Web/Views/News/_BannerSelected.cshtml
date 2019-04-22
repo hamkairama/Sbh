@@ -1,0 +1,46 @@
+﻿@using Sbh.Fr.CommonFunction
+@using Sbh.Fr.Model.Master
+@using Sbh.Fr.Facade.CommonFacade
+
+<style>
+    .container-banner {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container-banner img {vertical-align: middle;}
+
+    .container-banner .content-banner {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+</style>
+
+<div class="portlet light bordered">   
+    <div class="portlet-body">
+        <div class="row">
+            @{
+                    List<SBH_TM_SOSMED> sosmedList = new List<SBH_TM_SOSMED>();
+                    CommonFacade cf = new CommonFacade();
+                    sosmedList = cf.RetrivedBannerSelected();
+
+                    foreach (var itemx in sosmedList)
+                    {
+                    <div class="container-banner">
+                        <a href="@itemx.URL" title="@itemx.NAME" target="_blank">
+                            <img src="@itemx.PHOTO_PATH" style="width: 100%; height: auto; display: block;" />
+                            <div class="content-banner">
+                                <h1>@itemx.DESCRIPTION</h1>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+﻿@model Sbh.Fr.Model.Custom.ContactUs
+
+<style>
+    .close {
+        text-indent: 0;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        @if (ViewBag.msgSuccess != null)
+                        {
+                            <div class="alert alert-success">
+                                <a href="@Url.Action("Index", "Home")" class="close" type="button" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </a>
+                                <strong>
+                                    <i class="ace-icon fa fa-check"></i>
+                                </strong>
+                                @ViewBag.msgSuccess
+                                <br>
+                            </div>
+                        }
+
+                        @if (ViewBag.msgError != null)
+                        {
+                            <div class="alert alert-danger">
+                                <a href="@Url.Action("Index", "Home")" class="close" type="button" data-dismiss="alert">
+                                    <i class="ace-icon fa fa-times"></i>
+                                </a>
+                                <strong>
+                                    <i class="ace-icon fa fa-times"></i>
+                                </strong>
+                                @ViewBag.msgError
+                                <br>
+                            </div>
+                        }
+                        <div class="portlet-title">
+                            <div class="note note-info">
+                                <h5 style="margin-bottom: 0px;">
+                                    <i class="icon-call-end"></i>
+                                    Contact Us
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form role="form">
+                                <div class="form-body">
+                                    <div class="form-group form-md-line-input">
+                                        @Html.EditorFor(model => model.NAME_SENDER, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                                        @Html.ValidationMessageFor(model => model.NAME_SENDER, "", new { @class = "text-danger" })
+
+                                        <label for="form_control_1">Name</label>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        @Html.EditorFor(model => model.EMAIL_SENDER, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                                        @Html.ValidationMessageFor(model => model.EMAIL_SENDER, "", new { @class = "text-danger" })
+
+                                        <label for="form_control_1">Email</label>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        @Html.EditorFor(model => model.PHONE_SENDER, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                                        @Html.ValidationMessageFor(model => model.PHONE_SENDER, "", new { @class = "text-danger" })
+
+                                        <label for="form_control_1">Phone</label>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        @Html.TextAreaFor(model => model.DESCRIPTION, new { @class = "form-control", @rows = "3" })
+                                        @Html.ValidationMessageFor(model => model.DESCRIPTION, "", new { @class = "text-danger" })
+
+                                        <label for="form_control_1">Message</label>
+                                    </div>
+
+                                    @if (ViewBag.msgSuccess == null)
+                                    {
+                                        <input type="submit" value="Submit" class="btn blue btn-circle-left" />
+                                        <a href="@Url.Action("Index", "Home")" class="btn btn-default btn-circle-right">Cancel</a>
+                                    }
+                                    @if (ViewBag.msgSuccess != null)
+                                    {
+                                                                                <a href="@Url.Action("Index", "Home")" class="btn btn-default btn-circle">Close</a>
+                                    }
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

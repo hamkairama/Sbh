@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Sbh.Fr.Model.SBH_TM_GALERY_FOTO>
+@using Sbh.Fr.CommonFunction
+
+@{
+    ViewBag.Title = "Index Galery";
+    ViewBag.ActiveMore = "active";
+    ViewBag.ActiveMyListEvent = "active";
+    ViewBag.BreadCrumbMenu = "More";
+    ViewBag.BreadCrumbSubMenu = "My List Event";
+    ViewBag.BreadCrumbSubSubMenu = "Index";
+}
+
+@if (ViewBag.msgSuccess != null)
+{
+    <div class="alert alert-success">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+
+        <strong>
+            <i class="ace-icon fa fa-check"></i>
+        </strong>
+        @ViewBag.msgSuccess
+        <br>
+    </div>
+}
+
+@if (ViewBag.msgError != null)
+{
+    <div class="alert alert-danger">
+        <a href="#" class="close" type="button" data-dismiss="alert">
+            <i class="ace-icon fa fa-times"></i>
+        </a>
+        <strong>
+            <i class="ace-icon fa fa-times"></i>
+        </strong>
+        @ViewBag.msgError
+        <br>
+    </div>
+}
+
+<div class="portlet box blue-hoki">
+    <div class="portlet-title">
+        @*<div class="caption">
+            <a class="btn btn-success" tabindex="0" aria-controls="sample_3" href="@Url.Action("Create")" title="Create">
+                <span>Create</span>
+            </a>
+        </div>*@
+        @*<div class="actions">
+            <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                <i class="icon-cloud-upload"></i>
+            </a>
+            <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                <i class="icon-wrench"></i>
+            </a>
+            <a class="btn btn-circle btn-icon-only btn-warning" href="javascript:;">
+                <i class="icon-trash"></i>
+            </a>
+        </div>*@
+    </div>
+    <div class="portlet-body table-scrollable">
+        <table class="table table-striped table-bordered table-hover dt-responsive dataTable no-footer dtr-inline collapsed" width="100%" id="dynamic-table" cellspacing="0" role="grid" aria-describedby="sample_3_info" style="width: 100%;">
+            <thead>
+                <tr role="row">
+                    <th>
+                        Event Title
+                    </th>
+                    <th>
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr role="row" class="odd">
+                        <td>
+                            <p>@item.DESCRIPTION</p>
+                        </td>
+                        <td style="text-align:center">
+                            <a href="@Url.Action("GetListGaleryByUserIdAndEventTitle", "GaleryPhoto" , new { eventTitle = item.DESCRIPTION })" class="btn btn-xs btn-danger btn-circle-left">
+                                <i class="icon-eye"></i>
+                                <span style="color:white">See</span>
+                            </a>                      
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<script src="~/Content/Persada/datatable/jquery.dataTables.js"></script>
+<script src="~/Content/Persada/datatable/jquery.dataTables.bootstrap.js"></script>
+<script src="~/Content/Persada/datatable/extensions/TableTools/js/dataTables.tableTools.js"></script>
+<script src="~/Content/Persada/datatable/extensions/ColVis/js/dataTables.colVis.js"></script>
+<script src="~/Content/Persada/js/Helpers/StandardTable.js"></script>
+
+<script type="text/javascript">
+    //initiate dataTables plugin
+    var oTable1 =
+    $('#dynamic-table')
+    //.wrap("<div class='dataTables_borderWrap' />")   //if you are applying horizontal scrolling (sScrollX)
+    .dataTable({
+        bAutoWidth: false,
+        "aoColumns": [
+          null, 
+          { "bSortable": false }
+        ],
+        "aaSorting": [],
+
+        //,
+        //"sScrollY": "300px",
+        //"bPaginate": false,
+
+        //"sScrollX": "100%",
+        //"sScrollXInner": "120%",
+        //"bScrollCollapse": true,
+        //Note: if you are applying horizontal scrolling (sScrollX) on a ".table-bordered"
+        //you may want to wrap the table inside a "div.dataTables_borderWrap" element
+
+        //"iDisplayLength": 10
+    });
+</script>
+

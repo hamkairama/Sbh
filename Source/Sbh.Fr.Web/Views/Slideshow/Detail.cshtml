@@ -1,0 +1,79 @@
+﻿@model Sbh.Fr.Model.SBH_TM_SLIDESHOW
+@using System.Text;
+@{
+    ViewBag.Title = "Detail Slideshow";
+    ViewBag.ActiveMaintenance = "active";
+    ViewBag.ActiveSlideshow = "active";
+    ViewBag.BreadCrumbMenu = "Maintenance";
+    ViewBag.BreadCrumbSubMenu = "Slideshow";
+    ViewBag.BreadCrumbSubSubMenu = "Detail";
+
+    Model.CONTENT_DESCRIPTION = HttpUtility.HtmlDecode(Model.CONTENT_DESCRIPTION);
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">@Model.TITTLE</h4>
+        </div>
+        <div class="modal-body">
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>
+                        Title
+                    </dt>
+
+                    <dd>
+                        @Model.TITTLE
+                    </dd>
+
+                    <dt>
+                        Content
+                    </dt>
+
+                    <dd>
+                        <textarea class="form-control tinymce" style="width:300px" name="DESCRIPTION" id="DESCRIPTION">
+                            @Html.Raw(Model.CONTENT_DESCRIPTION)
+                        </textarea>
+                    </dd>
+
+                    <dt>
+                        Class Item
+                    </dt>
+
+                    <dd>
+                        @Model.CLASS
+                    </dd>
+
+                    <dt>
+                        Url
+                    </dt>
+
+                    <dd>
+                        @Model.URL
+                    </dd>
+
+                    <dt hidden>
+                        Photo
+                    </dt>
+
+                    <dd hidden>
+                        <div class="col-md-12">
+                            <img src="@Model.PHOTO_PATH" class="img-medium img-overflow" />
+                        </div>
+                    </dd>
+
+                </dl>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+<script src="~/Content/tinymce/tinymce/tinymce.min.js"></script>
+<script src="~/Content/tinymce/tinymce/tinymce.custom.persada.js"></script>

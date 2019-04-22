@@ -1,0 +1,106 @@
+﻿@model  Sbh.Fr.Model.Custom.Register
+
+<h2>View Profile</h2>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">View Profile</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <dl class="dl-horizontal">
+                        <dt>
+                            Name
+                        </dt>
+
+                        <dd>
+                            @Model.Name
+                        </dd>
+
+                        <dt>
+                            Email
+                        </dt>
+
+                        <dd>
+                            @Model.Email
+                        </dd>
+
+                        <dt>
+                            Gender
+                        </dt>
+
+                        <dd>
+                            @Model.Gender
+                        </dd>
+
+                        <dt>
+                            Date of birth
+                        </dt>
+
+                        <dd>
+                            @Model.Born
+                        </dd>
+
+                        <dt>
+                            Address
+                        </dt>
+
+                        <dd>
+                            @Model.Address
+                        </dd>
+
+                        <dt>
+                            Hobby
+                        </dt>
+
+                        <dd>
+                            @Model.Hobby
+                        </dd>
+
+                        <dt>
+                            Company
+                        </dt>
+
+                        <dd>
+                            @Model.Company
+                        </dd>
+
+                        <dt>
+                            Job
+                        </dt>
+
+                        <dd>
+                            @Model.Job
+                        </dd>
+
+                        <dt>
+                            Other Description
+                        </dt>
+
+                        <dd>
+                            @Model.OtherDescription
+                        </dd>
+
+                    </dl>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="~/Content/img/Desert.jpg" class="img-responsive img-large" alt="">
+
+                </div>
+
+            </div>
+
+           
+
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "About";
+    ViewBag.About = "active";
+    ViewBag.MapUrl = "Jl._Karya_Utama_No_77._Srengseng,_Kembangan._Jakarta_Barat,_Indonesia";
+}
+<h2>@ViewBag.Title.</h2>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">PT Sang Buah Hati</h4>
+        </div>
+        <div class="modal-body">           
+            <div>
+                <section id="Company">
+                    @*<iframe id="map"
+                            class="img-large"
+                            frameborder="0" style="border:0;"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0RRMJrUWd9zwELK6LMfJmrU9ZyIOsnq8&q=Ruko_Pasar_Modern_Paramount_Blok_G,_No._17,_Gading_Serpong_Tangerang,_15810._Indonesia"
+                            allowfullscreen>
+                    </iframe>*@
+
+                    <iframe id="map"
+                            class="img-large"
+                            frameborder="0" style="border:0;"
+                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAhnlmH2eIoIMTcZtUazyPb9CRNA0yarWc&q=Ruko_Pasar_Modern_Paramount_Blok_G,_No._17,_Gading_Serpong_Tangerang,_15810._Indonesia"
+                            allowfullscreen></iframe>
+                    <address>                        
+                        Ruko Pasar Modern Paramount Blok G, No. 17, Gading Serpong <br />
+                        Tangerang, 15810. Indonesia <br />   
+
+                        <abbr title="Phone">Telephone:</abbr>
+                        +62 878 8197 5343 & / +6281519882986
+                    </address>
+
+                    <address>
+                        <strong>Email:</strong>   
+                        <a href="mailto:redaksi@sangbuahhati.com">redaksi@sangbuahhati.com</a> ,
+                        <a href="mailto:pemasaran@sangbuahhati.com">pemasaran@sangbuahhati.com</a> <br />
+                    </address>
+                </section>
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default btn-circle" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>

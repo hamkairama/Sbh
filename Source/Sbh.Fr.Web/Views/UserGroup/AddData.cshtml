@@ -1,0 +1,33 @@
+﻿@model Sbh.Fr.Model.Custom.Group
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="note note-info">
+                <h5 style="margin-bottom: 0px;">
+                    <i class="icon-pencil"></i>
+                    Add Question Category
+                </h5>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group form-md-line-input">
+                            @Html.EditorFor(model => model.GROUP_DESC, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                            @Html.ValidationMessageFor(model => model.GROUP_DESC, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Group Description</label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions noborder">
+                        <input type="submit" value="Submit" class="btn blue btn-circle-left" />
+                        <a href="@Url.Action("ListGroup", "UserGroup")" class="btn btn-default btn-circle-right">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

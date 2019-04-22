@@ -1,0 +1,72 @@
+﻿@using Sbh.Fr.CommonFunction;
+@using Sbh.Fr.Model.Custom;
+
+<a href="javascript:;" class="page-quick-sidebar-toggler"><i class="icon-close"></i></a>
+<div class="page-quick-sidebar-wrapper">
+    <div class="page-quick-sidebar">
+        <div class="nav-justified">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active">
+                    <a href="#quick_sidebar_tab_1" data-toggle="tab">
+                        Users <span class="badge badge-danger">@Session["TotalUser"]</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active page-quick-sidebar-chat" id="quick_sidebar_tab_1">
+                    <div class="page-quick-sidebar-chat-users" data-rail-color="#ddd" data-wrapper-class="page-quick-sidebar-list">
+                        <ul class="media-list list-items">
+                            @{
+                                if (Session["ListUser"] != null)
+                                {
+                                    foreach (UserAdmin item in (List<UserAdmin>)Session["ListUser"])
+                                    {
+                            <li class='media' onclick="ShowChat('@Session["Id"]', '@item.ID')">
+                                <div class='media-status'>
+                                    <span class='badge badge-success'>8</span>
+                                </div>
+                                <img src='~/Content/img/avatar1.jpg' class='media-object' alt='...'>
+                                <div class='media-body'>
+                                    <h4 class='media-heading'>@item.USER_NAME</h4>
+                                </div>
+                            </li>
+                                    }
+                                }
+
+                            }
+                        </ul>
+                    </div>
+
+                    <div class="page-quick-sidebar-item">
+                        <div class="page-quick-sidebar-chat-user">
+                            <div class="page-quick-sidebar-nav">
+                                <a href="javascript:;" onclick="HideChat()" class="page-quick-sidebar-back-to-list"><i class="icon-arrow-left"></i>Back</a>
+                            </div>
+
+                            <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 461px;">
+                                <div id="htmlChat" class="page-quick-sidebar-chat-user-messages" data-height="461" data-initialized="1" style="overflow: hidden; width: auto; height: 461px; overflow-y:auto">
+                                </div>
+
+                                <div class="page-quick-sidebar-chat-user-form" style="position:fixed; top:90%">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" onkeypress="OnKeyPressChatMessage(event)" id="txtChatMessage" placeholder="Type a message here...">
+                                        <div class="input-group-btn">
+                                            <button type="button1" class="btn blue" onclick="CreateChatMessage()"><i class="icon-paper-clip"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+

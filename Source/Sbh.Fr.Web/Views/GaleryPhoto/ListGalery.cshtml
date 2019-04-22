@@ -1,0 +1,169 @@
+﻿@model IEnumerable<Sbh.Fr.Model.SBH_TM_GALERY_FOTO>
+@using Sbh.Fr.CommonFunction
+
+@{
+    ViewBag.Title = "Index Galery";
+    ViewBag.ActiveMore = "active";
+    ViewBag.ActiveMyListEvent = "active";
+    ViewBag.BreadCrumbMenu = "More";
+    ViewBag.BreadCrumbSubMenu = "My List Event";
+    ViewBag.BreadCrumbSubSubMenu = "Index";
+}
+<style>
+    .mySlides {
+        display: none;
+    }
+
+    .cursor {
+        cursor: pointer;
+    }
+
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    img {
+        margin-bottom: -4px;
+    }
+
+    .caption-container {
+        text-align: center;
+        background-color: black;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .demo {
+        opacity: 0.6;
+    }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+
+    img.hover-shadow {
+        transition: 0.3s;
+    }
+
+    .hover-shadow:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+</style>
+
+
+@{
+    int index = 1;
+    <div class="note note-info">
+        <i class="icon-info"></i>
+        @ViewBag.EventTitle
+    </div>
+    <div class="portlet box blue-hoki">
+        
+        <div class="portlet-body table-scrollable">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-sm-2">
+                        <img src="@item.PHOTO_PATH" style="width: 100%; height: 200px; display: block;" class="hover-shadow cursor thumbnail" onclick="openModal();currentSlide(@index)" />
+                    </div>
+                    index = index + 1;
+                }
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModalGalery" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">PT Sang Buah Hati</h4>
+                </div>
+                <div class="modal-body">
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="mySlides">
+                            <img src="@item.PHOTO_PATH" style="width:100%">
+                        </div>
+                    }
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                    <div class="caption-container">
+                        <p id="caption"></p>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-circle" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+<script>
+    function openModal() {
+        $("#myModalGalery").modal();
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>

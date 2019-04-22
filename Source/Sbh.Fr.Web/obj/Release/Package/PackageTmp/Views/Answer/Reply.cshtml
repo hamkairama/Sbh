@@ -1,0 +1,97 @@
+﻿@model  Sbh.Fr.Model.Custom.Answer
+
+<style>
+    .close {
+        text-indent: 0;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            @*@if (ViewBag.msgSuccess != null)
+            {
+                <div class="alert alert-success">
+                    <a href="@Url.Action("Index", "Home")" class="close" type="button" data-dismiss="alert">
+                        <i class="ace-icon fa fa-times"></i>
+                    </a>
+                    <strong>
+                        <i class="ace-icon fa fa-check"></i>
+                    </strong>
+                    @ViewBag.msgSuccess
+                    <br>
+                </div>
+            }
+
+            @if (ViewBag.msgError != null)
+            {
+                <div class="alert alert-danger">
+                    <a href="@Url.Action("Index", "Home")" class="close" type="button" data-dismiss="alert">
+                        <i class="ace-icon fa fa-times"></i>
+                    </a>
+                    <strong>
+                        <i class="ace-icon fa fa-times"></i>
+                    </strong>
+                    @ViewBag.msgError
+                    <br>
+                </div>
+            }*@
+            <div class="note note-info">
+                <h5 style="margin-bottom: 0px;">
+                    <i class="icon-pencil"></i>
+                    Answer
+                </h5>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group form-md-line-input" style="display:none">
+                            @Html.EditorFor(model => model.ID_QUESTIONS, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ID_QUESTIONS, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Id Questions</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.EditorFor(model => model.TITLE_QUESTIONS, new { htmlAttributes = new { @class = "form-control custom-modal", disabled = "disabled" } })
+                            @Html.ValidationMessageFor(model => model.TITLE_QUESTIONS, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Title</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.TextAreaFor(model => model.QUESTIONS, new { @class = "form-control", @rows = "5", disabled = "disabled" })
+                            @Html.ValidationMessageFor(model => model.QUESTIONS, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Questions</label>
+                        </div>
+
+                        <div class="form-group form-md-line-input">
+                            @Html.TextAreaFor(model => model.ANSWER, new { @class = "form-control", @rows = "3" })
+                            @Html.ValidationMessageFor(model => model.ANSWER, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Reply</label>
+                        </div>
+
+                    </div>
+
+                    @if (ViewBag.msgSuccess == null)
+                    {
+                        <div class="form-actions noborder">
+                            <input type="submit" value="Submit" class="btn blue btn-circle-left" />
+                            <a href="@Url.Action("DetailQA", "Home" , new { id= Model.ID_QUESTIONS })" class="btn btn-default btn-circle-right">Cancel</a>
+                        </div>
+                    }
+                    @*@if (ViewBag.msgSuccess != null)
+                        {
+                            <div class="form-actions noborder">
+                                <a href="@Url.Action("DetailQA", "Home" , new { id= ViewBag.id })" class="btn btn-default btn-circle">Close</a>
+                            </div>
+                        }*@
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+@*<script type="text/javascript">
+        $(function () {
+            $("#Born").datepicker();
+        });
+    </script>*@

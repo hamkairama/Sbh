@@ -1,0 +1,218 @@
+﻿@model  Sbh.Fr.Model.Custom.Register
+<style>
+    .close {
+        text-indent: 0;
+    }
+
+    fieldset.scheduler-border {
+        border: 1px groove #ddd !important;
+        padding: 0 1.4em 0.4em 1.4em !important;
+        margin: 0 0 1.5em 0 !important;
+        -webkit-box-shadow: 0px 0px 0px 0px #000;
+        box-shadow: 0px 0px 0px 0px #000;
+    }
+
+    legend.scheduler-border {
+        font-size: 1.2em !important;
+        font-weight: bold !important;
+        text-align: left !important;
+        width: auto;
+        /*padding:0 10px;*/
+        border-bottom: none;
+        margin-bottom: 1px;
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="portlet light bordered">
+        <div class="portlet-title" style="border:none; margin-bottom:0px">
+            <div class="note note-info">
+                <h5 style="margin-bottom: 0px;">
+                    <i class="icon-users"></i>
+                    User Profile
+                </h5>
+            </div>
+        </div>
+        @if (ViewBag.msgSuccess != null)
+        {
+            <div class="alert alert-success">
+                <a href="@Url.Action("Index", "Home")" class="close" type="button" data-dismiss="alert">
+                    <i class="ace-icon fa fa-times"></i>
+                </a>
+                <strong>
+                    <i class="ace-icon fa fa-check"></i>
+                </strong>
+                @ViewBag.msgSuccess
+                <br>
+            </div>
+        }
+
+        @if (ViewBag.msgError != null)
+        {
+            <div class="alert alert-danger">
+                <a href="@Url.Action("Index", "Home")" class="close" type="button" data-dismiss="alert">
+                    <i class="ace-icon fa fa-times"></i>
+                </a>
+                <strong>
+                    <i class="ace-icon fa fa-times"></i>
+                </strong>
+                @ViewBag.msgError
+                <br>
+            </div>
+        }
+
+
+        <div class="portlet-body form">
+            <form role="form">
+                <div class="form-body">
+                    <fieldset class="scheduler-border">
+                        <legend class="scheduler-border font-yellow-gold">User Rating</legend>
+                        <div class="panel panel-white post" style="border: none;">
+                            <div class="post-heading" style="padding-left: 0px;">
+                                <div class="col-md-12" style="padding-left:0">
+                                    <div class="col-md-1" style="padding-left: 0px;">
+                                        <div class="pull-left image">
+                                            <img src="~/Content/img/avatar.png" class="img-circle avatar" alt="user profile image">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-10">
+                                        <div class="pull-left meta">
+                                            <div class="title h5" style="padding-left:10px">
+                                                <a href="javascript:;" class="font-green">
+                                                    @Html.DisplayFor(modelItem => Model.Name)
+                                                </a>
+                                                <br />
+                                                <a href="javascript:;" class="font-yellow-gold">
+                                                    @Html.DisplayFor(modelItem => Model.DESCR) &nbsp;
+                                                    @for (int i = 0; i < Model.START_COUNT; i++)
+                                                    {
+                                                        <i class="fa fa-star font-yellow-gold"></i>
+                                                    }
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    @if (Request.QueryString["tag"] == "p")
+                    {
+                        <fieldset class="scheduler-border">
+                            <legend class="scheduler-border font-red">Change Password</legend>
+                            @*<div class="form-group form-md-line-input">
+                                    @Html.PasswordFor(model => model.PasswordOld, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.PasswordOld, "", new { @class = "text-danger" })
+                                    <label for="form_control_1" class="font-red bold">Password Old</label>
+                                </div>*@
+
+                            <div class="form-group form-md-line-input">
+                                @Html.EditorFor(model => model.PasswordOld, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.PasswordOld, "", new { @class = "text-danger" })
+                                <label for="form_control_1">Password Old</label>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                <label for="form_control_1" class="font-green bold">Password New</label>
+                            </div>
+                            <div class="form-group form-md-line-input">
+                                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                                <label for="form_control_1" class="font-green bold">Confirm Password</label>
+                            </div>
+                        </fieldset>
+                    }
+                    @if (Session["IdGroup"] != null)
+                    {
+                        if (@HttpContext.Current.Session["IdGroup"].ToString() == "1")
+                        {
+                            <div class="form-group form-md-line-input has-info">
+                                @Html.DropDownListFor(model => model.ID_GROUP, ViewBag.IdGroup as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                                <label for="form_control_1">User Group</label>
+                            </div>
+                        }
+                    }
+                    <div class="form-group form-md-line-input">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                        <label for="form_control_1">Email</label>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        <label for="form_control_1">Name</label>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        @Html.EditorFor(model => model.Born, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Born, "", new { @class = "text-danger" })
+                        <label for="form_control_1">Born</label>
+                    </div>
+                    <div class="form-group form-md-line-input has-info">
+                        @Html.DropDownListFor(model => model.Gender, ViewBag.GENDER_ID as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                        <label for="form_control_1">Gender</label>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        @Html.TextAreaFor(model => model.Address, new { @class = "form-control", @rows = "3" })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                        <label for="form_control_1">Address</label>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        @Html.EditorFor(model => model.Job, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Job, "", new { @class = "text-danger" })
+                        <label for="form_control_1">Job</label>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        @Html.EditorFor(model => model.Company, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger" })
+                        <label for="form_control_1">Company</label>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        @Html.EditorFor(model => model.Hobby, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Hobby, "", new { @class = "text-danger" })
+                        <label for="form_control_1">Hobby</label>
+                    </div>
+                    <div class="form-group form-md-line-input">
+                        @Html.TextAreaFor(model => model.OtherDescription, new { @class = "form-control", @rows = "3" })
+                        @Html.ValidationMessageFor(model => model.OtherDescription, "", new { @class = "text-danger" })
+                        <label for="form_control_1">Other Description</label>
+                    </div>
+                </div>
+                @switch (Request.QueryString["tag"])
+                {
+                    case "e":
+                        <div class="form-actions noborder">
+                            <input type="submit" value="Submit" class="btn blue btn-circle-left" />
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-default btn-circle-right">Cancel</a>
+                        </div>
+                        break;
+                    case "p":
+                        <div class="form-actions noborder">
+                            <input type="submit" value="Submit" class="btn blue btn-circle-left" />
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-default btn-circle-right">Cancel</a>
+                        </div>
+                        break;
+                    case "v":
+                        <div class="form-actions noborder">
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-default btn-circle">Close</a>
+                        </div>
+                        break;
+                    default:
+                        break;
+                }
+            </form>
+        </div>
+    </div>
+
+}
+
+<script type="text/javascript">
+    $(function () {
+        $("#Born").datepicker();
+    });
+</script>

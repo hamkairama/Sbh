@@ -1,0 +1,114 @@
+﻿@using Sbh.Fr.CommonFunction;
+@{
+    string y = string.Empty;
+    SumTaskList stl = new SumTaskList();
+    if (Session["Id"] != null)
+    {
+        y = stl.SumData(int.Parse(Session["Id"].ToString()));
+    }
+}
+<div class="page-header-top">
+    <div class="container">
+        <div class="page-logo">
+            <a href="@Url.Action("Index", "Home")">
+                <img src="~/Content/img/SBH2.png"alt="logo" class="logo2" width="50">
+            </a>
+        </div>
+        <a href="javascript:;" class="menu-toggler"></a>
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                <!-- BEGIN NOTIFICATION DROPDOWN -->
+                <!-- DOC: Apply "dropdown-hoverable" class after "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
+                <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                              
+                 @if (y != "" && bool.Parse(@HttpContext.Current.Session["IsSuperAdmin"].ToString()) == true)
+                {
+                    <li class="dropdown dropdown-extended dropdown-inbox dropdown-dark" id="header_inbox_bar">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="icon-envelope-open"></i>
+                            <span class="badge badge-default">
+                                @y
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="external dropdown-dark">
+                                <h3>
+                                    You have
+                                    <strong>@y pending</strong> tasks
+                                </h3>
+                                <a href="@Url.Action("Answer", "Answer")">view all</a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <li class="droddown dropdown-separator">
+                    <span class="separator"></span>
+                </li>
+                <li class="dropdown dropdown-user dropdown-dark">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <img alt="" class="img-circle" src="~/Content/img/avatar.png" />
+                        <span class="username">
+                            @if (Session["UserName"] != null)
+                            {
+                                <span>Hi, </span> @HttpContext.Current.Session["UserName"].ToString();
+                            }
+                            else
+                            {
+                                <span>Login</span>
+                            }
+                        </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        @if (Session["UserName"] == null)
+                        {
+                            <li>
+                                <a href="@Url.Action("Register", "User")" class="font-purple">
+                                    <i class="icon-user font-purple"></i> Register
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" onclick="Modal('/User/Login/','','#myModal')" class="font-green-soft">
+                                    <i class="icon-login font-green-soft"></i> Login
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="@Url.Action("Logout", "User")" class="font-red">
+                                    <i class="icon-logout font-red"></i>Logout
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="Modal('/User/ViewProfile/', '@HttpContext.Current.Session["Id"].ToString()', '#myModal')" href="#" class="font-green">
+                                    <i class="icon-lock font-green"></i>View Profile
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Profile", "User", new { id=  @HttpContext.Current.Session["Id"].ToString(), tag="e"})" class="font-blue-soft">
+                                    <i class="icon-settings font-blue-soft"></i>Edit
+                                </a>
+                            </li>
+                            <li class="divider"> </li>
+                            <li>
+                                <a onclick="Modal('/User/ChangePassword/', '@HttpContext.Current.Session["Id"].ToString()', '#myModal')" href="#" class="font-yellow-gold">
+                                    <i class="icon-lock font-yellow-gold"></i>ChangePassword
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>               
+                @if (Session["UserName"] != null)
+                {
+                    <li class="dropdown dropdown-extended quick-sidebar-toggler">
+                        <span class="sr-only">Toggle Quick Sidebar</span>
+                        <i class="icon-logout"></i>
+                    </li>
+                }               
+            </ul>
+        </div>
+    </div>
+</div>

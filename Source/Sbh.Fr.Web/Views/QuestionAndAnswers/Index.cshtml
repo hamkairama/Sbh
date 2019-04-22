@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Sbh.Fr.Model.View.QuestionAndAnswer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_QUESTIONS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEGORY_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_USER_QUESTIONS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUESTIONS_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QUESTIONS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANSWER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ID_USER_ANSWER)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ANSWER_NAME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_QUESTIONS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CATEGORY_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_USER_QUESTIONS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUESTIONS_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QUESTIONS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANSWER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID_USER_ANSWER)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ANSWER_NAME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_CATEGORY }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_CATEGORY }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_CATEGORY })
+        </td>
+    </tr>
+}
+
+</table>

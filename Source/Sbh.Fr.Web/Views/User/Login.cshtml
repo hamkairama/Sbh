@@ -1,0 +1,53 @@
+﻿@model Sbh.Fr.Model.Custom.Login
+
+<style>
+    .close {
+        text-indent: 0;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="portlet-title">
+                            <div class="note note-info">
+                                <h5 style="margin-bottom: 0px;">
+                                    <i class="icon-login"></i>
+                                    Login
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="portlet-body form">
+                            <form role="form">
+                                <div class="form-body">
+
+                                    <div class="form-group form-md-line-input">
+                                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                                        <label for="form_control_1">Email</label>
+                                    </div>
+                                    <div class="form-group form-md-line-input">
+                                        @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                                        <label for="form_control_1">Password</label>
+                                    </div>
+
+                                    <input type="submit" value="Login" class="btn blue btn-circle-left" />
+                                    <button type="button" class="btn btn-default btn-circle-right" data-dismiss="modal">Cancel</button>
+
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

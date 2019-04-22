@@ -1,0 +1,61 @@
+﻿@model Sbh.Fr.Model.SBH_TM_GALERY_FOTO
+@{
+    ViewBag.Title = "Upload Event";
+    ViewBag.ActiveMore = "active";
+    ViewBag.ActiveMyListEvent = "active";
+    ViewBag.BreadCrumbMenu = "More";
+    ViewBag.BreadCrumbSubMenu = "My List Event";
+    ViewBag.BreadCrumbSubSubMenu = "Upload My Event";
+}
+
+<h2>@ViewBag.Title.</h2>
+<link href="~/Content/dropzone/css/dropzone.css" rel="stylesheet" />
+
+<script>
+    var storeImage;
+</script>
+
+@using (Html.BeginForm("ActionCreate", "GaleryPhoto", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <hr />
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    <div class="form-group">
+        <label class="col-md-2 control-label">Event </label>
+        <div class="col-md-10">
+            @Html.DropDownListFor(m => m.NEWS_ID, (IEnumerable<SelectListItem>)ViewBag.GetNewsList, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Description</label>
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.DESCRIPTION, new { @class = "form-control tinymce", @style = "width:300px" })
+        </div>
+
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Signature</label>
+        <div class="col-md-10">
+            <div class="input-icon right">
+                <section action="#" class="dropzone" id="my-dropzone"></section>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Create" />
+        </div>
+    </div>
+}
+
+
+
+<script src="~/Content/dropzone/metronic.js"></script>
+<script src="~/Content/dropzone/dropzone.js"></script>
+<script src="~/Content/dropzone/form-dropzone.js"></script>
+
+<script>
+    jQuery(document).ready(function () {
+        FormDropzone.init();
+    });
+</script>

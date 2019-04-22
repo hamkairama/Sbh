@@ -1,0 +1,9 @@
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\bin\Release\Sbh.Fr.Model.Custom.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\bin\Release\Sbh.Fr.Model.Custom.pdb
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\bin\Release\Sbh.Fr.Model.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\bin\Release\EntityFramework.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\bin\Release\Sbh.Fr.Model.pdb
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\bin\Release\EntityFramework.xml
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\obj\Release\Sbh.Fr.Model.Custom.csprojResolveAssemblyReference.cache
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\obj\Release\Sbh.Fr.Model.Custom.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.Model.Custom\obj\Release\Sbh.Fr.Model.Custom.pdb

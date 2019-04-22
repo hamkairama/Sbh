@@ -1,0 +1,124 @@
+﻿@model IEnumerable<Sbh.Fr.Model.Custom.QuestionAndAnswerCustoms>
+
+@{
+    var x = -1;
+    var y = -1;
+    string q = "";
+}
+
+<div class="col-md-12">
+    <div class="note note-info">
+        <h5 style="margin-bottom: 0px;">
+            <i class="fa fa-comments-o"></i>
+            Question and Answer Session
+            <br />
+            <a href="#" class="mt-sweetalert font-green mt-intalic" data-type="info" style="font-size: smaller;">
+                @DateTime.Now.ToString()
+            </a>
+        </h5>
+    </div>
+    @if (ViewBag.msgSuccess != null)
+    {
+        <div class="alert alert-success">
+            <a href="@Url.Action("Index", "Home")" class="font-red" style="float: right;" type="button" data-dismiss="alert">
+                <i class="ace-icon fa fa-times"></i>
+            </a>
+            <strong>
+                <i class="ace-icon fa fa-check"></i>
+            </strong>
+            @ViewBag.msgSuccess
+            <br>
+        </div>
+    }
+
+    @if (ViewBag.msgError != null)
+    {
+        <div class="alert alert-danger">
+            <a href="@Url.Action("Index", "Home")" class="font-red" style="float: right;" type="button" data-dismiss="alert">
+                <i class="ace-icon fa fa-times"></i>
+            </a>
+            <strong>
+                <i class="ace-icon fa fa-times"></i>
+            </strong>
+            @ViewBag.msgError
+            <br>
+        </div>
+    }
+    @foreach (var item in Model)
+    {
+        if (item.IdQuestions != x)
+        {
+            <div class="panel panel-white post">
+                <div class="post-heading" style="padding-left: 0px;">
+                    <div class="col-md-12">
+                        <div class="col-md-1" style="padding-left: 0px;">
+                            <div class="pull-left image">
+                                <img src="~/Content/img/01.jpg" class="img-circle avatar" alt="user profile image">
+                            </div>
+                        </div>
+
+                        <div class="col-md-10">
+                            <div class="pull-left meta">
+                                <div class="title h5">
+                                    <span hidden="hidden">
+                                        @Html.DisplayFor(modelItem => item.IdQuestions)
+                                    </span>
+                                    <a href="#"><b>@Html.DisplayFor(modelItem => item.QuestionsName)</b></a>
+                                    <br />
+                                    @if (item.SumComment != "0")
+                                    {
+                                        <a href="javascript:;" class="btn font-yellow-gold" style="font-size: 0px;padding-left: 0px;">
+                                            @for (int i = 0; i < item.MostComment; i++)
+                                            {
+                                                <i class="fa fa-star"></i>
+                                            }
+                                        </a>
+                                    }
+                                </div>
+                                <h6 class="text-muted time" style="margin-top:0px">
+                                    @Html.DisplayFor(modelItem => item.DateQustion)
+                                </h6>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="post-description" style="text-align:justify; font-weight:bold; font-size:12px;">
+                    @Html.DisplayFor(modelItem => item.TitleQuestions)
+                </div>
+                <div class="post-description" style="text-align:justify">
+                    @Html.DisplayFor(modelItem => item.Questions)
+                </div>
+                <div class="mt-body-actions">
+                    <div class="btn-group btn-group btn-group-left">
+                        @if (item.SumComment != "0")
+                        {
+                            <a href="javascript:;" class="btn font-red" style="font-size: 12px;">
+                                <i class="fa fa-comments"></i> @item.SumComment
+                            </a>
+                        }
+                        <a href="@Url.Action("DetailQA", "Home" , new { id=item.IdQuestions })" class="btn" onclick="showDiv(@y.ToString())" style="font-size: 12px;">
+                            <i class="icon-bubble"></i> Comments
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+        x = item.IdQuestions;
+    }
+
+</div>
+
+
+<script type="text/javascript">
+    $(function () {
+
+    });
+    function showDiv(id) {
+        $("#div_" + id).show();
+    }
+    function hideDiv(id) {
+        $("#div_" + id).hide();
+    }
+</script>

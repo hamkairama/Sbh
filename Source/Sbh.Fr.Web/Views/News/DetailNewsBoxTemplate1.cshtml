@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Sbh.Fr.Model.SBH_TM_NEWS>
+@using Sbh.Fr.CommonFunction
+@using Sbh.Fr.Model
+
+@{
+    string subMenu = Convert.ToString(ViewBag.ActiveSubMenu);
+    ViewBag.Title = "List News Box";
+    ViewBag.ActiveDuniaIbuDanAnak = "active";
+
+    if (subMenu == "Laporan Utama")
+    {
+        ViewBag.ActiveLaporanUtama = "active";
+    }
+    else if (subMenu == "Edukasi")
+    {
+        ViewBag.ActiveEdukasi = "active";
+    }
+    else if (subMenu == "Psikologi")
+    {
+        ViewBag.ActivePsikologi = "active";
+    }
+    else if (subMenu == "Sehat")
+    {
+        ViewBag.ActiveSehat = "active";
+    }
+    else if (subMenu == "Cantik")
+    {
+        ViewBag.ActiveCantik = "active";
+    }
+    else if (subMenu == "Kehamilan")
+    {
+        ViewBag.ActiveKehamilan = "active";
+    }
+
+    ViewBag.BreadCrumbMenu = "Maintenance";
+    ViewBag.BreadCrumbSubMenu = "List News Box";
+    ViewBag.BreadCrumbSubSubMenu = "Index";
+}
+
+
+<style>
+    .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 100%;
+        right: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        width: 0;
+        height: 100%;
+        transition: .5s ease;
+    }
+
+    .container-overlay:hover .overlay {
+        width: 100%;
+        left: 0;
+    }
+
+    .text {
+        color: white;
+        font-size: 11px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        white-space: unset;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-8">
+            @{
+                SBH_TM_NEWS news = Model.Where(x => x.ID == ViewBag.NewsSelectedId).FirstOrDefault();
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="note note-info">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4><b>@news.TITLE</b></h4>
+                                </div>
+                                <div class="col-md-4" style="text-align:right">
+                                    <span class="mt-sweetalert font-green mt-intalic" data-type="info" style="font-size: smaller;">
+                                        @news.CREATED_TIME.ToString()
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-sm-8 col-sm-4">
+                                <div class="">
+                                    <a href="javascript:;">
+                                        <img src="@news.FILE_IMAGE1" class="img-large img-overflow" alt="100%x200" style="width: 100%; height: 10%; display: block;" />
+                                    </a>
+                                </div>
+
+                            </div>
+                            <div>
+                                <p>
+                                    @Html.Raw(Server.HtmlDecode(news.DESCRIPTION))
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="note note-info">
+                        <p>Latest Top News</p>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row" style="background-image:url(../Content/img/treeShowdow.jpg); background-position: right bottom;}">
+                        @{
+                            foreach (var item in Model)
+                            {
+                                <div class="col-sm-2 container-overlay">
+                                    <a href="@Url.Action("DetailNewsBox", "News", new {categoryId = item.CATEGORY_ID, newsId = item.ID })" title="@item.TITLE">
+                                        <img src="@item.FILE_IMAGE1" style="display:block;width:100%;height:auto" />
+                                        <div class="overlay">
+                                            <div class="text">@item.TITLE</div>
+                                        </div>
+                                    </a>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            @Html.Partial("_BannerSelected")
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,104 @@
+﻿@*@using Persada.Fr.CommonFunction*@
+@using Sbh.Fr.CommonFunction;
+@{
+    string y = string.Empty;
+    SumTaskList stl = new SumTaskList();
+    if (Session["Id"] != null)
+    {
+        y = stl.SumData(int.Parse(Session["Id"].ToString()));
+    }
+}
+
+<style>
+    .navbar-custom {
+        background: white;
+        color: black;
+        height: 20%;
+        border-bottom: 1px #e1e1e1;
+        border-bottom-style: dotted;
+    }
+</style>
+
+<div class="page-header navbar navbar-fixed-top">
+    <div class="page-header-inner">
+        <div class="page-logo">
+            <a href="#">
+                <img src="~/Content/img/logo-gemagrafi.png" alt="logo" class="logo-default" />
+            </a>
+            <div class="menu-toggler sidebar-toggler ">
+            </div>
+        </div>
+        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+        </a>
+        <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+                @if (y != "" && bool.Parse(@HttpContext.Current.Session["IsSuperAdmin"].ToString()) == true)
+                {
+                    <li class="dropdown dropdown-extended dropdown-inbox" id="header_inbox_bar">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                            <i class="icon-envelope-open"></i>
+                            <span class="badge badge-default">
+                                @y
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <p>
+                                    You have @y tasklist
+                                </p>
+                            </li>
+                            <li class="external">
+                                <a href="@Url.Action("Answer", "Answer")">
+                                    See all tasklist <i class="m-icon-swapright"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                }              
+
+                <li class="dropdown dropdown-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                        <img alt="" class="img-circle" src="~/Content/img/avatar.png" />
+                        <span class="username">
+                            @if (Session["UserName"] != null)
+                            {
+                                <span>Hi, </span> @HttpContext.Current.Session["UserName"].ToString();
+                            }
+                        </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+
+                        @if (Session["UserName"] == null)
+                        {
+                            <li>
+                                <a href="@Url.Action("Register", "User")" class="font-purple">
+                                    <i class="icon-user font-purple"></i> Register
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#" onclick="Modal('/User/Login/','','#myModal')" class="font-green-soft">
+                                    <i class="icon-login font-green-soft"></i> Login
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="@Url.Action("Logout", "User")" class="font-red">
+                                    <i class="icon-logout font-red"></i>Logout
+                                </a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("Profile", "User", new { id=  @HttpContext.Current.Session["Id"].ToString(), tag="e"})" class="font-green">
+                                    <i class="icon-users font-green"></i>Profile
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model Sbh.Fr.Model.Custom.MostActivity
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="note note-info">
+                <h5 style="margin-bottom: 0px;">
+                    <i class="icon-pencil"></i>
+                    Remove Most Activity.
+                </h5>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group form-md-line-input" style="display:none">
+                            @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Id Category</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.EditorFor(model => model.DESCR, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                            @Html.ValidationMessageFor(model => model.DESCR, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Most Description</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.EditorFor(model => model.START_COUNT, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                            @Html.ValidationMessageFor(model => model.START_COUNT, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Count Star</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.EditorFor(model => model.BEGIN_MOST_COUNT, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                            @Html.ValidationMessageFor(model => model.BEGIN_MOST_COUNT, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Start Range Most Count</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.EditorFor(model => model.END_MOST_COUNT, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                            @Html.ValidationMessageFor(model => model.END_MOST_COUNT, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Start Range Most Count</label>
+                        </div>
+                    </div>
+                    <div class="form-actions noborder">
+                        <input type="submit" value="Delete" class="btn red btn-circle-left" />
+                        <a href="@Url.Action("ListMostActivity", "MostActivity")" class="btn btn-default btn-circle-right">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}

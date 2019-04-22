@@ -1,0 +1,70 @@
+﻿@model  Sbh.Fr.Model.SBH_TM_CATEGORY
+
+@using Sbh.Fr.CommonFunction;
+@{
+    ViewBag.Title = "Detail Category";
+    ViewBag.ActiveMaintenance = "active";
+    ViewBag.ActiveCategory = "active";
+    ViewBag.BreadCrumbMenu = "Maintenance";
+    ViewBag.BreadCrumbSubMenu = "Category";
+    ViewBag.BreadCrumbSubSubMenu = "Detail";
+
+    Model.DESCRIPTION = HttpUtility.HtmlDecode(Model.DESCRIPTION);
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">@Model.CATEGORY_NAME</h4>
+        </div>
+        <div class="modal-body">
+            <div>
+                <dl class="dl-horizontal">
+
+                    <dt>
+                        Category Name
+                    </dt>
+
+                    <dd>
+                        @Model.CATEGORY_NAME
+                    </dd>
+
+                    <dt>
+                        Category Description
+                    </dt>
+
+                    <dd>
+                        <textarea class="form-control tinymce" style="width:300px" name="DESCRIPTION" id="DESCRIPTION">
+                            @Html.Raw(Model.DESCRIPTION)
+                        </textarea>
+                    </dd>
+                    <dt>
+                        Url
+                    </dt>
+
+                    <dd>
+                        @Model.URL
+                    </dd>
+
+                    <dt>
+                        Class
+                    </dt>
+
+                    <dd>
+                        @Model.CLASS
+                    </dd>
+                </dl>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+
+<script src="~/Content/tinymce/tinymce/tinymce.min.js"></script>
+<script src="~/Content/tinymce/tinymce/tinymce.custom.persada.js"></script>

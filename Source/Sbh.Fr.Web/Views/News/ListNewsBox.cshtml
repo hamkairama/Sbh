@@ -1,0 +1,159 @@
+﻿@model IEnumerable<Sbh.Fr.Model.SBH_TM_NEWS>
+@using Sbh.Fr.CommonFunction
+@using Sbh.Fr.Model
+
+@{
+    string subMenu = Convert.ToString(ViewBag.ActiveSubMenu);
+    ViewBag.Title = "List News Box";
+    ViewBag.ActiveDuniaIbuDanAnak = "active";
+
+    if (subMenu == "Laporan Utama")
+    {
+        ViewBag.ActiveLaporanUtama = "active";
+    }
+    else if (subMenu == "Edukasi")
+    {
+        ViewBag.ActiveEdukasi = "active";
+    }
+    else if (subMenu == "Psikologi")
+    {
+        ViewBag.ActivePsikologi = "active";
+    }
+    else if (subMenu == "Sehat")
+    {
+        ViewBag.ActiveSehat = "active";
+    }
+    else if (subMenu == "Cantik")
+    {
+        ViewBag.ActiveCantik = "active";
+    }
+    else if (subMenu == "Kehamilan")
+    {
+        ViewBag.ActiveKehamilan = "active";
+    }
+
+    ViewBag.BreadCrumbMenu = "Maintenance";
+    ViewBag.BreadCrumbSubMenu = "List News Box";
+    ViewBag.BreadCrumbSubSubMenu = "Index";
+}
+<style>
+    .container-news {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+        .container-news img {
+            vertical-align: middle;
+        }
+
+        .container-news .content-news {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 20px;
+        }
+
+    .overlay-news {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        color: #f1f1f1;
+        overflow: hidden;
+        width: 100%;
+        height: 0;
+        transition: .5s ease;
+    }
+
+    .container-news:hover .overlay-news {
+        height: 100%;
+    }
+
+    .text {
+        color: white;
+        font-size: 11px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+    }
+</style>
+
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="note note-info">
+                        <p>@ViewBag.ActiveSubMenu </p>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        @{
+                            //make 2 colums
+                            List<SBH_TM_NEWS> listNews = Model.ToList();
+                            decimal colSpace = (decimal)listNews.Count() / 2;
+                            int startCol1 = 0;
+                            int endCol1 = (int)Math.Round(colSpace, 0, MidpointRounding.AwayFromZero);
+                            int startCol2 = endCol1;
+                            int endCol2 = listNews.Count();
+
+                            <div class="col-md-6">
+                                @for (int i = startCol1; i < endCol1; i++)
+                                {
+                                    <div class="container-news">
+                                        <a href="@Url.Action("DetailNewsBox", "News", new {categoryId = @listNews[i].CATEGORY_ID, newsId = @listNews[i].ID })">
+                                            <img src="@listNews[i].FILE_IMAGE1" style="width: 100%; height: auto; display: block;" />
+                                            <div class="content-news">
+                                                <h3>@listNews[i].TITLE</h3>
+                                                @*<p class="overflow-ellipsis">@Html.Raw(Server.HtmlDecode(listNews[i].DESCRIPTION))</p>*@
+
+                                            </div>
+                                            <div class="overlay-news">
+                                                <div class="text overflow-ellipsis-250">@Html.Raw(Server.HtmlDecode(listNews[i].DESCRIPTION))</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                }
+                            </div>
+
+                            <div class="col-md-6">
+                                @for (int j = startCol2; j < endCol2; j++)
+                                {
+                                    <div class="container-news">
+                                        <a href="@Url.Action("DetailNewsBox", "News", new {categoryId = @listNews[j].CATEGORY_ID, newsId = @listNews[j].ID })">
+                                            <img src="@listNews[j].FILE_IMAGE1" style="width: 100%; height: auto; display: block;" />
+                                            <div class="content-news">
+                                                <h3>@listNews[j].TITLE</h3>
+                                                @*<p class="overflow-ellipsis-250">@Html.Raw(Server.HtmlDecode(listNews[j].DESCRIPTION))</p>*@
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                }
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+            @Html.Partial("_BannerSelected")
+        </div>
+    </div>
+</div>
+
+
+

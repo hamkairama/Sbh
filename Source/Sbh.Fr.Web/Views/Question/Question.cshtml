@@ -1,0 +1,106 @@
+﻿@model  Sbh.Fr.Model.Custom.Questions
+@{
+    ViewBag.ActiveQuestion = "active";
+    ViewBag.BreadCrumbMenu = "Question";
+}
+<style>
+    .close {
+        text-indent: 0;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="note note-info">
+                <h5 style="margin-bottom: 0px;">
+                    <i class="icon-question"></i>
+                    Question
+                </h5>
+            </div>
+            @if (ViewBag.msgSuccess != null)
+            {
+                <div class="alert alert-success">
+                    <a href="@Url.Action("Index", "Home")" class="close" type="button" data-dismiss="alert">
+                        <i class="ace-icon fa fa-times"></i>
+                    </a>
+                    <strong>
+                        <i class="ace-icon fa fa-check"></i>
+                    </strong>
+                    @ViewBag.msgSuccess
+                    <br />
+                    <br />
+                    <div style="background-color:#eef7fb; border-radius:10px;color:black">
+                        <p style="padding-left:1%">
+                            Tag your Question?
+                            <br />
+                            <a href="@Url.Action("List", "ListUserGroup", new { id = ViewBag.IdQue })"
+                               class="btn btn-success btn-circle-left">Yes</a>
+                            <a href="@Url.Action("Index", "Home")"
+                               class="btn btn-default btn-circle-right">No</a>
+                            <br />
+                        </p>
+                    </div>
+                </div>
+            }
+
+            @if (ViewBag.msgError != null)
+            {
+                <div class="alert alert-danger">
+                    <a href="@Url.Action("Index", "Home")" class="close" type="button" data-dismiss="alert">
+                        <i class="ace-icon fa fa-times"></i>
+                    </a>
+                    <strong>
+                        <i class="ace-icon fa fa-times"></i>
+                    </strong>
+                    @ViewBag.msgError
+                    <br>
+                </div>
+            }
+
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group form-md-line-input has-info">
+                            @Html.DropDownListFor(model => model.ID_CATEGORY, ViewBag.IdCat as IEnumerable<SelectListItem>, new { @class = "form-control" })
+                            <label for="form_control_1">Select Category Question</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.EditorFor(model => model.TITLE_QUESTIONS, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                            @Html.ValidationMessageFor(model => model.TITLE_QUESTIONS, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Title</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.TextAreaFor(model => model.QUESTIONS, new { @class = "form-control", @rows = "3" })
+                            @Html.ValidationMessageFor(model => model.QUESTIONS, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Ask Questions</label>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    @if (ViewBag.msgSuccess == null)
+                    {
+
+                        <div class="form-actions noborder">
+                            <input type="submit" value="Submit" class="btn blue btn-circle-left" />
+                            <a href="@Url.Action("Index", "Home")" class="btn btn-default btn-circle-right">Cancel</a>
+                        </div>
+                    }
+                    @*@if (ViewBag.msgSuccess != null)
+                        {
+                            <div class="form-actions noborder">
+                                <a href="@Url.Action("Index", "Home")" class="btn btn-default btn-circle">Close</a>
+                            </div>
+                        }*@
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
+@*<script type="text/javascript">
+        $(function () {
+            $("#Born").datepicker();
+        });
+    </script>*@

@@ -1,0 +1,12 @@
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\Sbh.Fr.CommonFunction.dll.config
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\Sbh.Fr.CommonFunction.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\Sbh.Fr.CommonFunction.pdb
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\EntityFramework.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\EntityFramework.SqlServer.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\Sbh.Fr.Model.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\Sbh.Fr.Model.pdb
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\EntityFramework.xml
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\bin\Release\EntityFramework.SqlServer.xml
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\obj\Release\Sbh.Fr.CommonFunction.csprojResolveAssemblyReference.cache
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\obj\Release\Sbh.Fr.CommonFunction.dll
+E:\Github\Sbh\Sbh.Fr.Web\Sbh.Fr.CommonFunction\obj\Release\Sbh.Fr.CommonFunction.pdb

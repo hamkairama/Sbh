@@ -1,0 +1,47 @@
+﻿@model Sbh.Fr.Model.Custom.CategoryQuestions
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="note note-info">
+                <h5 style="margin-bottom: 0px;">
+                    <i class="icon-pencil"></i>
+                    Remove Question Category
+                </h5>
+            </div>
+            <div class="portlet-body form">
+                <form role="form">
+                    <div class="form-body">
+                        <div class="form-group form-md-line-input" style="display:none">
+                            @Html.EditorFor(model => model.ID, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.ID, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Id Category</label>
+                        </div>
+                        <div class="form-group form-md-line-input" style="display:none">
+                            @Html.EditorFor(model => model.CREATED_BY, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CREATED_BY, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Created By</label>
+                        </div>
+                        <div class="form-group form-md-line-input" style="display:none">
+                            @Html.EditorFor(model => model.CREATED_TIME, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CREATED_TIME, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Created Time</label>
+                        </div>
+                        <div class="form-group form-md-line-input">
+                            @Html.EditorFor(model => model.CATEGORY_DESC, new { htmlAttributes = new { @class = "form-control custom-modal" } })
+                            @Html.ValidationMessageFor(model => model.CATEGORY_DESC, "", new { @class = "text-danger" })
+                            <label for="form_control_1">Category Description</label>
+                        </div>
+                    </div>
+                    <div class="form-actions noborder">
+                        <input type="submit" value="Delete" class="btn red btn-circle-left" />
+                        <a href="@Url.Action("ListCategory", "CategoryQuestions")" class="btn btn-default btn-circle-right">Back</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+}
